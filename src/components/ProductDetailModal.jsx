@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ShoppingBag, MessageCircle, Plus, Minus, Check, ShieldCheck, Gem, Share2, Camera } from 'lucide-react';
+import { X, ShoppingBag, MessageCircle, Plus, Minus, Check, ShieldCheck, Gem, Camera, Download, Copy } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
 import { BRAND_INFO } from '../data/jewellery';
-import { sendWhatsAppWithImage, getPublicImageUrl } from '../utils/whatsapp';
+import { sendWhatsAppWithImage, getPublicImageUrl, downloadImage, copyImageToClipboard } from '../utils/whatsapp';
 
 export default function ProductDetailModal({ product, onClose }) {
   const { addToCart } = useCart();
@@ -12,6 +12,8 @@ export default function ProductDetailModal({ product, onClose }) {
   const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
   const [isSharing, setIsSharing] = useState(false);
+  const [downloaded, setDownloaded] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   if (!product) return null;
 
@@ -34,6 +36,20 @@ export default function ProductDetailModal({ product, onClose }) {
       title: `${product.code} - ${prodName}`
     });
     setIsSharing(false);
+  };
+
+  const handleDownloadPhoto = () => {
+    downloadImage(product.image, `${product.code}.jpg`);
+    setDownloaded(true);
+    setTimeout(() => setDownloaded(false), 2500);
+  };
+
+  const handleCopyPhoto = async () => {
+    const success = await copyImageToClipboard(product.image);
+    if (success) {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    }
   };
 
   return (
@@ -70,7 +86,7 @@ export default function ProductDetailModal({ product, onClose }) {
             <img
               src={product.image}
               alt={prodName}
-              className="max-h-[320px] md:max-h-[400px] w-full object-contain rounded-xl shadow-lg"
+              className="max-h-[300px] md:max-h-[380px] w-full object-contain rounded-xl shadow-lg"
             />
             <div className="absolute top-4 left-4">
               <span className="px-3 py-1 rounded-full text-xs uppercase tracking-widest font-semibold bg-chocolate-950 text-gold-champagne border border-gold-champagne/40">
@@ -78,15 +94,26 @@ export default function ProductDetailModal({ product, onClose }) {
               </span>
             </div>
 
-            {/* Photo Included WhatsApp badge */}
-            <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-chocolate-950/80 border border-gold-champagne/30 text-[11px] text-gold-champagne">
-              <Camera className="w-3.5 h-3.5 text-gold-warm" />
-              <span>{language === 'te' ? 'ఫోటోతో సహా వాట్సాప్‌లో పంపబడుతుంది' : 'Sends with real workshop photo'}</span>
+            {/* Quick Photo Actions under the image */}
+            <div className="mt-3 flex items-center gap-2">
+              <button
+                onClick={handleDownloadPhoto}
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-chocolate-950/80 border border-gold-champagne/30 text-[11px] text-gold-champagne hover:bg-gold-champagne hover:text-chocolate transition-colors"
+                title="Download high-resolution workshop photo"
+              >
+                {downloaded ? <Check className="w-3.5 h-3.5 text-green-400" /> : <Download className="w-3.5 h-3.5 text-gold-warm" />}
+                <span>{downloaded ? (language === 'te' ? 'డౌన్‌లోడ్ అయ్యింది!' : 'Downloaded!') : (language === 'te' ? 'ఫోటో డౌన్‌లోడ్' : 'Save Photo')}</span>
+              </button>
+
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-950/60 border border-green-500/30 text-[11px] text-green-300">
+                <Camera className="w-3.5 h-3.5 text-green-400" />
+                <span>{language === 'te' ? 'ఫోటో వాట్సాప్‌కు వెళ్తుంది' : 'Sends with Photo'}</span>
+              </div>
             </div>
           </div>
 
           {/* Right: Details & Actions */}
-          <div className="w-full md:w-1/2 p-6 sm:p-8 flex flex-col justify-between text-left space-y-6 overflow-y-auto">
+          <div className="w-full md:w-1/2 p-6 sm:p-8 flex flex-col justify-between text-left space-y-5 overflow-y-auto">
             <div>
               <span className="text-xs uppercase tracking-[0.2em] text-gold-champagne/80 font-medium block mb-1">
                 {product.category}
@@ -96,7 +123,7 @@ export default function ProductDetailModal({ product, onClose }) {
                 {prodName}
               </h3>
 
-              <div className="mt-3 flex items-center gap-2">
+              <div className="mt-2.5 flex items-center gap-2">
                 <span className="text-sm font-semibold text-gold-champagne">
                   {t('priceOnEnquiry')}
                 </span>
@@ -106,7 +133,7 @@ export default function ProductDetailModal({ product, onClose }) {
                 </span>
               </div>
 
-              <div className="mt-4 pt-4 border-t border-gold-champagne/15 space-y-3">
+              <div className="mt-3.5 pt-3.5 border-t border-gold-champagne/15 space-y-3">
                 <p className="font-sans text-xs sm:text-sm text-ivory/80 font-light leading-relaxed">
                   {prodDesc}
                 </p>
@@ -125,7 +152,7 @@ export default function ProductDetailModal({ product, onClose }) {
             </div>
 
             {/* Actions: Quantity + Add to Cart + WhatsApp with Photo */}
-            <div className="space-y-3 pt-4 border-t border-gold-champagne/15">
+            <div className="space-y-3 pt-3 border-t border-gold-champagne/15">
               <div className="flex items-center gap-4">
                 <span className="text-xs uppercase tracking-wider text-ivory/70">
                   Qty:
@@ -151,6 +178,7 @@ export default function ProductDetailModal({ product, onClose }) {
                 </div>
               </div>
 
+              {/* Action Buttons */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                 <button
                   onClick={handleAddToCart}
@@ -167,12 +195,19 @@ export default function ProductDetailModal({ product, onClose }) {
                 <button
                   onClick={handleWhatsAppEnquiry}
                   disabled={isSharing}
-                  className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-full text-xs uppercase tracking-widest font-semibold border-2 border-green-500/80 bg-green-950/40 text-green-300 hover:bg-green-600 hover:text-white transition-all shadow-md"
+                  className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-full text-xs uppercase tracking-widest font-semibold border-2 border-green-500 bg-gradient-to-r from-green-600 to-green-700 text-white hover:from-green-500 hover:to-green-600 transition-all shadow-[0_4px_15px_rgba(34,197,94,0.35)]"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>{t('btnWhatsAppWithPhoto')}</span>
                 </button>
               </div>
+
+              {/* Helpful user note about photo preview */}
+              <p className="text-[11px] text-center text-gold-champagne/80 font-light">
+                {language === 'te' 
+                  ? '💡 ఆభరణం ఫోటో లింక్ మరియు ప్రివ్యూ వాట్సాప్ సందేశంతో స్వయంచాలకంగా పంపబడుతుంది.' 
+                  : '💡 Product photo preview is automatically attached and displayed in your WhatsApp message.'}
+              </p>
             </div>
           </div>
         </motion.div>

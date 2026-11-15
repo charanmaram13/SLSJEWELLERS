@@ -26,11 +26,69 @@ export const getPublicImageUrl = (imagePath) => {
 };
 
 /**
+ * Copies an image directly to the system clipboard (as PNG).
+ * Allows the customer to simply press Ctrl+V / Paste in WhatsApp Web/Desktop.
+ */
+export const copyImageToClipboard = async (imagePath) => {
+  try {
+    if (typeof window === 'undefined' || !navigator.clipboard || !window.ClipboardItem) {
+      return false;
+    }
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.src = imagePath;
+    await new Promise((resolve, reject) => {
+      img.onload = resolve;
+      img.onerror = reject;
+    });
+
+    const canvas = document.createElement('canvas');
+    canvas.width = img.naturalWidth || img.width;
+    canvas.height = img.naturalHeight || img.height;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+
+    return new Promise((resolve) => {
+      canvas.toBlob(async (blob) => {
+        if (!blob) return resolve(false);
+        try {
+          await navigator.clipboard.write([
+            new ClipboardItem({ 'image/png': blob })
+          ]);
+          resolve(true);
+        } catch (e) {
+          console.log('Clipboard write failed:', e);
+          resolve(false);
+        }
+      }, 'image/png');
+    });
+  } catch (err) {
+    console.log('Error copying image to clipboard:', err);
+    return false;
+  }
+};
+
+/**
+ * Triggers a direct download of the authentic workshop jewellery photo.
+ */
+export const downloadImage = (imagePath, filename) => {
+  try {
+    const link = document.createElement('a');
+    link.href = imagePath;
+    link.download = filename || imagePath.split('/').pop() || 'sls-jewellery.jpg';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  } catch (e) {
+    console.log('Download image error:', e);
+  }
+};
+
+/**
  * Sends a WhatsApp enquiry with image support.
- * On mobile browsers supporting the Web Share API with files,
- * this directly opens WhatsApp with the actual image file attached!
- * On desktops and other browsers, it opens WhatsApp with the message
- * containing the public image link so WhatsApp renders the rich preview.
+ * 1. Puts the photo preview link prominently at the TOP of the message so WhatsApp immediately generates the rich media thumbnail card.
+ * 2. On mobile devices supporting Web Share API with files, opens native WhatsApp composer with the actual image file attached.
+ * 3. Copies the image to clipboard on supported desktop browsers so the customer can also paste it with Ctrl+V.
  */
 export const sendWhatsAppWithImage = async ({
   text,
@@ -39,9 +97,14 @@ export const sendWhatsAppWithImage = async ({
   title = 'SLS JEWELLERS Enquiry'
 }) => {
   const imageUrl = getPublicImageUrl(imagePath);
-  const fullText = `${text}\n\n📸 *Photo Link:* ${imageUrl}`;
+  
+  // Notice: placing the image URL at the beginning of the WhatsApp message triggers WhatsApp's media preview scraper immediately!
+  const fullText = `📸 *JEWELLERY PHOTO PREVIEW:* ${imageUrl}\n\n${text}`;
 
-  // Check if Web Share API with files is available (Android, iOS Safari/Chrome)
+  // Try copying image to clipboard for easy Ctrl+V pasting into WhatsApp
+  copyImageToClipboard(imagePath);
+
+  // Check if Web Share API with files is available (mobile browsers: Android Chrome, iOS Safari)
   if (typeof navigator !== 'undefined' && navigator.canShare && imagePath) {
     try {
       const response = await fetch(imagePath);
@@ -64,7 +127,7 @@ export const sendWhatsAppWithImage = async ({
     }
   }
 
-  // Standard WhatsApp Web/App click-to-chat fallback
+  // Fallback: Open WhatsApp click-to-chat with the direct photo preview at the top
   const encodedText = encodeURIComponent(fullText);
   window.open(`https://wa.me/${phone}?text=${encodedText}`, '_blank');
 };
