@@ -15,9 +15,9 @@ export default function Catalogue() {
 
   const categories = [
     { id: 'All', labelEn: 'All Jewellery', labelTe: 'అన్ని ఆభరణాలు' },
-    { id: 'Gold Necklaces', labelEn: 'Gold Necklaces', labelTe: 'బంగారు నెక్లెస్‌లు' },
+    { id: 'Gold Necklaces', labelEn: 'Necklaces', labelTe: 'నెక్లెస్‌లు' },
     { id: 'Traditional Harams', labelEn: 'Traditional Harams', labelTe: 'సాంప్రదాయ హారాలు' },
-    { id: 'Gold Chains', labelEn: 'Gold Chains', labelTe: 'బంగారు గొలుసులు' },
+    { id: 'Gold Chains', labelEn: 'Chains', labelTe: 'గొలుసులు' },
     { id: 'Earrings', labelEn: 'Earrings & Jhumkas', labelTe: 'చెవి కమ్మలు & బుట్టలు' },
     { id: 'Bridal Jewellery', labelEn: 'Bridal Jewellery', labelTe: 'పెళ్లి ఆభరణాలు' },
     { id: 'Traditional Jewellery', labelEn: 'Traditional & Deity', labelTe: 'సాంప్రదాయ ఆభరణాలు' },

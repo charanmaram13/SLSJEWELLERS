@@ -62,9 +62,9 @@ export const TRANSLATIONS = {
 
     // Categories
     catAll: "All Jewellery",
-    catNecklaces: "Gold Necklaces",
+    catNecklaces: "Necklaces",
     catHarams: "Traditional Harams",
-    catChains: "Gold Chains",
+    catChains: "Chains",
     catEarrings: "Earrings & Jhumkas",
     catBridal: "Bridal Jewellery",
     catTraditional: "Traditional Jewellery",
@@ -190,9 +190,9 @@ export const TRANSLATIONS = {
 
     // Categories
     catAll: "అన్ని ఆభరణాలు",
-    catNecklaces: "బంగారు నెక్లెస్‌లు",
+    catNecklaces: "నెక్లెస్‌లు",
     catHarams: "సాంప్రదాయ హారాలు",
-    catChains: "బంగారు గొలుసులు",
+    catChains: "గొలుసులు",
     catEarrings: "చెవి కమ్మలు & బుట్టలు",
     catBridal: "పెళ్లి ఆభరణాల సెట్లు",
     catTraditional: "సాంప్రదాయ కాసుల ఆభరణాలు",
