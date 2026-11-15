@@ -22,10 +22,10 @@ export default function Craftsmanship() {
     },
     {
       step: "02",
-      title: "22K స్వచ్ఛమైన బంగారు కళ",
-      description: "స్వచ్ఛమైన 22 క్యారెట్ల బంగారాన్ని సున్నితమైన తీగలుగా, రేకులుగా మలిచి సున్నితమైన చేతిపనితో రూపొందిస్తాము.",
+      title: "24K స్వచ్ఛమైన బంగారు కళ",
+      description: "స్వచ్ఛమైన 24 క్యారెట్ల బంగారాన్ని సున్నితమైన తీగలుగా, రేకులుగా మలిచి సున్నితమైన చేతిపనితో రూపొందిస్తాము.",
       focus: "చేతివృత్తి నైపుణ్యం",
-      metrics: "22K హాల్‌మార్క్ ప్రమాణాలు",
+      metrics: "24K హాల్‌మార్క్ ప్రమాణాలు",
       image: IMAGES.craftsmanship[1].image,
       alt: IMAGES.craftsmanship[1].alt,
       icon: Hammer

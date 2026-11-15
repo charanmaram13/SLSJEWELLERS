@@ -6,7 +6,7 @@ export const TRANSLATIONS = {
     locationShort: "TENALI · ANDHRA PRADESH",
     tagline: "Where Elegance Becomes Eternal",
     manufacturerBadge: "Direct Jewellery Manufacturer",
-    goldStandard: "22K Solid Gold Standard",
+    goldStandard: "24K Solid Gold Standard",
 
     // Welcome Screen
     welcomeHeading: "Welcome to SLS JEWELLERY WORKS",
@@ -134,7 +134,7 @@ export const TRANSLATIONS = {
     locationShort: "తెనాలి · ఆంధ్రప్రదేశ్",
     tagline: "అందమైన ఆభరణాలు... మీ సంప్రదాయానికి ప్రత్యేక అందం",
     manufacturerBadge: "ప్రత్యక్ష బంగారు ఆభరణాల తయారీదారులు",
-    goldStandard: "22 క్యారెట్ల స్వచ్ఛమైన బంగారం",
+    goldStandard: "24 క్యారెట్ల స్వచ్ఛమైన బంగారం",
 
     // Welcome Screen
     welcomeHeading: "SLS జ్యువెలరీ వర్క్స్ కు స్వాగతం",

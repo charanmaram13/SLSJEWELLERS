@@ -17,7 +17,7 @@ export const BRAND_INFO = {
   whatsappUrl: "https://wa.me/919989222524",
   googleMapsUrl: "https://maps.google.com/?q=Veera+Raghavulu+Street+Sharraf+Bazar+Tenali+Andhra+Pradesh+522201",
   manufacturingFocus: "Direct Jewellery Manufacturer",
-  purityStandard: "22K Fine Gold Standard"
+  purityStandard: "24K Fine Gold Standard"
 };
 
 export const COLLECTIONS = [
@@ -27,7 +27,7 @@ export const COLLECTIONS = [
     subtitle: "Timeless Grace Around Your Neck",
     category: "Necklaces",
     description: "Sculpted with artistic finesse, our gold necklaces range from regal chokers to delicate contemporary collar pieces designed to illuminate every neckline.",
-    highlights: ["Bespoke Floral & Geometric Motifs", "Comfort Flex Articulation", "22K Solid Gold Finish"],
+    highlights: ["Bespoke Floral & Geometric Motifs", "Comfort Flex Articulation", "24K Solid Gold Finish"],
     image: IMAGES.collections.necklaces.image,
     alt: IMAGES.collections.necklaces.alt,
     accent: "Masterpiece Artistry"
@@ -130,7 +130,7 @@ export const CRAFTSMANSHIP_STAGES = [
   {
     step: "02",
     title: "Precision Crafting",
-    shortDesc: "Alloying 22K gold, ingot drawing, and shaping core armatures by master goldsmith hands.",
+    shortDesc: "Refining 24K gold, ingot drawing, and shaping core armatures by master goldsmith hands.",
     details: "Using calibrated rolling mills and drawing plates, our artisans shape raw gold into sheets and ultra-fine wires. The structural skeleton is formed with extreme thermal care, creating a foundation that withstands generations of wear."
   },
   {

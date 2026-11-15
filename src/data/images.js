@@ -18,7 +18,7 @@ export const IMAGES = {
   // About Section Editorial Imagery (Authentic SLS Workshop Photography)
   about: {
     workshop: "/assets/products/SLS042.jpg",
-    alt: "Authentic SLS JEWELLERY WORKS handcrafted 22K gold necklace with workshop authentication card (SLS042)",
+    alt: "Authentic SLS JEWELLERY WORKS handcrafted 24K gold necklace with workshop authentication card (SLS042)",
     showcase: "/assets/products/SLS002.jpg",
     altShowcase: "SLS JEWELLERY WORKS Traditional Kasumala & Ruby Floral Necklace (SLS002)"
   },
@@ -35,7 +35,7 @@ export const IMAGES = {
     },
     chains: {
       image: "/assets/products/SLS020.jpg",
-      alt: "SLS JEWELLERY WORKS 22K Hand-Interlocked Solid Gold Chain (SLS020)"
+      alt: "SLS JEWELLERY WORKS 24K Hand-Interlocked Solid Gold Chain (SLS020)"
     },
     earrings: {
       image: "/assets/products/SLS006.jpg",
@@ -58,7 +58,7 @@ export const IMAGES = {
       code: "SLS004",
       title: "Grand Lakshmi Temple Haram",
       category: "Harams",
-      purity: "22K Traditional Hallmark",
+      purity: "24K Traditional Hallmark",
       description: "An opulent multi-tier temple haram featuring Goddess Lakshmi surrounded by sacred peacock motifs and micro-filigree beads.",
       image: "/assets/products/SLS004.jpg",
       alt: "SLS004 Grand Lakshmi Temple Haram"
@@ -68,7 +68,7 @@ export const IMAGES = {
       code: "SLS003",
       title: "Ruby & Emerald Floral Choker",
       category: "Necklaces",
-      purity: "22K Solid Gold",
+      purity: "24K Solid Gold",
       description: "Architectural floral collar choker embedded with brilliant rubies, emeralds, and hanging pearl accents for wedding majesty.",
       image: "/assets/products/SLS003.jpg",
       alt: "SLS003 Ruby & Emerald Floral Choker"
@@ -78,7 +78,7 @@ export const IMAGES = {
       code: "SLS006",
       title: "Temple Lakshmi Jhumkas",
       category: "Earrings",
-      purity: "22K Fine Gold",
+      purity: "24K Fine Gold",
       description: "Cascading antique bell jhumkas crowned with divine Lakshmi motifs and delicate gold pearl cluster drops.",
       image: "/assets/products/SLS006.jpg",
       alt: "SLS006 Temple Lakshmi Jhumkas"
@@ -88,7 +88,7 @@ export const IMAGES = {
       code: "SLS020",
       title: "Vajra Interlock Gold Chain",
       category: "Chains",
-      purity: "22K Master Linked",
+      purity: "24K Master Linked",
       description: "Durable hand-woven solid gold links hand-beveled at each facet to reflect radiant luster under every angle of light.",
       image: "/assets/products/SLS020.jpg",
       alt: "SLS020 Vajra Interlock Gold Chain"
@@ -98,7 +98,7 @@ export const IMAGES = {
       code: "SLS005",
       title: "Royal Kasumala Bridal Haram",
       category: "Bridal",
-      purity: "22K Wedding Heritage",
+      purity: "24K Wedding Heritage",
       description: "A prestigious Andhra bridal coin haram featuring Goddess Lakshmi coins aligned with royal precision for auspicious muhurthams.",
       image: "/assets/products/SLS005.jpg",
       alt: "SLS005 Royal Kasumala Bridal Haram"
@@ -108,7 +108,7 @@ export const IMAGES = {
       code: "SLS002",
       title: "Traditional Kasumala Floral Necklace",
       category: "Necklaces",
-      purity: "22K Heritage Minted",
+      purity: "24K Heritage Minted",
       description: "Heritage coin necklace with ruby-studded floral medallions strung along a woven gold band crafted in Tenali.",
       image: "/assets/products/SLS002.jpg",
       alt: "SLS002 Traditional Kasumala Floral Necklace"
@@ -129,9 +129,9 @@ export const IMAGES = {
       step: "02",
       title: "Precision Crafting",
       subtitle: "The Master Goldsmith's Bench",
-      description: "Pure gold is alloyed to 22 Karat perfection, then transformed into delicate wires, plates, and structural skeletons in our Sharraf Bazar workshop.",
+      description: "Pure gold is refined to 24 Karat perfection, then transformed into delicate wires, plates, and structural skeletons in our Sharraf Bazar workshop.",
       image: "/assets/products/SLS015.jpg",
-      alt: "SLS JEWELLERY WORKS 22K Solid Gold Neckpiece (SLS015)"
+      alt: "SLS JEWELLERY WORKS 24K Solid Gold Neckpiece (SLS015)"
     },
     {
       step: "03",
@@ -161,7 +161,7 @@ export const IMAGES = {
       image: "/assets/products/SLS002.jpg",
       alt: "SLS002 Kasumala Ruby Floral Necklace",
       tag: "Workshop Exclusive",
-      specs: "22K Solid Gold • Ruby Motifs"
+      specs: "24K Solid Gold • Ruby Motifs"
     },
     {
       id: "gal-2",
@@ -171,7 +171,7 @@ export const IMAGES = {
       image: "/assets/products/SLS004.jpg",
       alt: "SLS004 Grand Lakshmi Temple Haram",
       tag: "Heritage Masterpiece",
-      specs: "22K Traditional Gold • Temple Nakshi"
+      specs: "24K Traditional Gold • Temple Nakshi"
     },
     {
       id: "gal-3",
@@ -181,7 +181,7 @@ export const IMAGES = {
       image: "/assets/products/SLS020.jpg",
       alt: "SLS020 Classic Interlocking Gold Chain",
       tag: "Everyday Luxury",
-      specs: "22K Solid Gold • Precision Link"
+      specs: "24K Solid Gold • Precision Link"
     },
     {
       id: "gal-4",
@@ -191,7 +191,7 @@ export const IMAGES = {
       image: "/assets/products/SLS006.jpg",
       alt: "SLS006 Antique Temple Lakshmi Jhumkas",
       tag: "Festive Splendor",
-      specs: "22K Gold • Handcrafted Bell Drops"
+      specs: "24K Gold • Handcrafted Bell Drops"
     },
     {
       id: "gal-5",
@@ -211,7 +211,7 @@ export const IMAGES = {
       image: "/assets/products/SLS003.jpg",
       alt: "SLS003 Ruby & Emerald Floral Choker",
       tag: "Artisan Collar",
-      specs: "22K Gold • Natural Gemstones"
+      specs: "24K Gold • Natural Gemstones"
     },
     {
       id: "gal-7",
@@ -221,7 +221,7 @@ export const IMAGES = {
       image: "/assets/products/SLS011.jpg",
       alt: "SLS011 Imperial Lakshmi Heritage Haram",
       tag: "Temple Artistry",
-      specs: "22K Gold • Deep Nakshi Relief"
+      specs: "24K Gold • Deep Nakshi Relief"
     },
     {
       id: "gal-8",
@@ -231,7 +231,7 @@ export const IMAGES = {
       image: "/assets/products/SLS014.jpg",
       alt: "SLS014 Artisan Floral Gold Earrings",
       tag: "Delicate Flora",
-      specs: "22K Gold • Hand-faceted Drops"
+      specs: "24K Gold • Hand-faceted Drops"
     },
     {
       id: "gal-9",
@@ -241,7 +241,7 @@ export const IMAGES = {
       image: "/assets/products/SLS007.jpg",
       alt: "SLS007 South Indian Bridal Haram Set",
       tag: "Bridal Trousseau",
-      specs: "22K Hallmarked Gold Set"
+      specs: "24K Hallmarked Gold Set"
     },
     {
       id: "gal-10",
@@ -251,7 +251,7 @@ export const IMAGES = {
       image: "/assets/products/SLS021.jpg",
       alt: "SLS021 High-Polish Rope Pattern Chain",
       tag: "Artisan Link",
-      specs: "22K Gold • Flexible Weave"
+      specs: "24K Gold • Flexible Weave"
     },
     {
       id: "gal-11",
@@ -261,7 +261,7 @@ export const IMAGES = {
       image: "/assets/products/SLS017.jpg",
       alt: "SLS017 Heritage Filigree Festoon Necklace",
       tag: "Tenali Special",
-      specs: "22K Gold • Micro-filigree"
+      specs: "24K Gold • Micro-filigree"
     },
     {
       id: "gal-12",
@@ -271,7 +271,7 @@ export const IMAGES = {
       image: "/assets/products/SLS022.jpg",
       alt: "SLS022 Royal Temple Deity Jhumkas",
       tag: "Sacred Splendor",
-      specs: "22K Gold • Lightweight Balance"
+      specs: "24K Gold • Lightweight Balance"
     }
   ]
 };

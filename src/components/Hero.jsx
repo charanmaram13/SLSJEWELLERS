@@ -13,8 +13,8 @@ export default function Hero() {
       titleEn: "Grand Lakshmi Temple Haram",
       titleTe: "మహాలక్ష్మి టెంపుల్ హారం",
       code: "SLS004",
-      categoryEn: "22K Traditional Haram",
-      categoryTe: "22 క్యారెట్ల సాంప్రదాయ హారం",
+      categoryEn: "24K Traditional Haram",
+      categoryTe: "24 క్యారెట్ల సాంప్రదాయ హారం",
       image: "/assets/products/SLS004.jpg",
       tagEn: "Masterpiece Haram",
       tagTe: "ప్రసిద్ధ హారం"
