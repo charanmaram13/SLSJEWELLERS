@@ -33,6 +33,9 @@ export const TRANSLATIONS = {
     heroDescription: "Discover beautiful jewellery designs crafted with attention to detail. Explore our collections and connect with us directly for enquiries.",
     btnExploreCatalogue: "Browse Catalogue",
     btnWhatsAppEnquiry: "WhatsApp Enquiry",
+    btnWhatsAppWithPhoto: "Enquire with Photo on WhatsApp",
+    btnSharePhotoWhatsApp: "Send Photo to WhatsApp",
+    photoLabel: "Photo",
 
     // Collections
     collectionsEyebrow: "POPULAR CURATIONS",
@@ -158,6 +161,9 @@ export const TRANSLATIONS = {
     heroDescription: "ప్రతి ఆభరణాన్ని ఎంతో శ్రద్ధ మరియు నైపుణ్యంతో తయారుచేస్తున్నాము. మా సరికొత్త డిజైన్లను చూసి వాట్సాప్ ద్వారా సులభంగా ఆర్డర్ లేదా వివరాలు తెలుసుకోండి.",
     btnExploreCatalogue: "క్యాటలాగ్ చూడండి",
     btnWhatsAppEnquiry: "వాట్సాప్ విచారణ",
+    btnWhatsAppWithPhoto: "ఫోటోతో సహా వాట్సాప్‌లో విచారించండి",
+    btnSharePhotoWhatsApp: "ఫోటోను వాట్సాప్‌లో పంపండి",
+    photoLabel: "ఫోటో",
 
     // Collections
     collectionsEyebrow: "ప్రసిద్ధ కలెక్షన్లు",

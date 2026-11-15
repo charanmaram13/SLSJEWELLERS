@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowUpRight, MessageCircle, Sparkles } from 'lucide-react';
 import { BRAND_INFO } from '../data/jewellery';
 import { useLanguage } from '../context/LanguageContext';
+import { getPublicImageUrl } from '../utils/whatsapp';
 
 export default function CollectionCard({ collection }) {
   const { language } = useLanguage();
@@ -17,8 +18,9 @@ export default function CollectionCard({ collection }) {
 
   const title = language === 'te' && titleTeMap[collection.title] ? titleTeMap[collection.title] : collection.title;
 
+  const photoUrl = getPublicImageUrl(collection.image);
   const whatsappCollectionUrl = `https://wa.me/${BRAND_INFO.phoneRaw}?text=${encodeURIComponent(
-    `Hello SLS JEWELLERS, I am interested in viewing your ${collection.title} collection from your website.`
+    `Hello SLS JEWELLERS, I am interested in viewing your ${collection.title} collection from your website.\n\n📸 Sample Photo: ${photoUrl}`
   )}`;
 
   return (

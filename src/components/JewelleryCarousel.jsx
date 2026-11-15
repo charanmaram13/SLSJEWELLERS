@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, MessageCircle, Sparkles, Gem, ShieldCheck } from 'lucide-react';
 import { IMAGES } from '../data/images';
 import { BRAND_INFO } from '../data/jewellery';
+import { getPublicImageUrl } from '../utils/whatsapp';
 
 export default function JewelleryCarousel() {
   const items = IMAGES.runway;
@@ -73,9 +74,10 @@ export default function JewelleryCarousel() {
     }
   };
 
-  // Direct WhatsApp Enquiry URL with item context
+  // Direct WhatsApp Enquiry URL with item context and photo preview
+  const photoUrl = getPublicImageUrl(activeItem.image);
   const whatsappRunwayUrl = `https://wa.me/${BRAND_INFO.phoneRaw}?text=${encodeURIComponent(
-    `Hello SLS JEWELLERS, I am inquiring about the ${activeItem.title} (${activeItem.category}) from your Jewellery Runway.`
+    `Hello SLS JEWELLERS, I am inquiring about the ${activeItem.title} (${activeItem.category}) from your Jewellery Runway.\n\n📸 Photo: ${photoUrl}`
   )}`;
 
   return (

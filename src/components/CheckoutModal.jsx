@@ -4,6 +4,7 @@ import { X, MessageCircle, Send, ShieldCheck, AlertCircle } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
 import { BRAND_INFO } from '../data/jewellery';
+import { getPublicImageUrl } from '../utils/whatsapp';
 
 export default function CheckoutModal() {
   const { isCheckoutOpen, setIsCheckoutOpen, cart, clearCart, setIsCartOpen } = useCart();
@@ -34,10 +35,11 @@ export default function CheckoutModal() {
     e.preventDefault();
     if (!validate()) return;
 
-    // Build the formatted WhatsApp order message as requested
+    // Build the formatted WhatsApp order message with photos included
     const itemsList = cart.map((item, index) => {
       const prodName = language === 'te' ? item.product.nameTe : item.product.name;
-      return `${index + 1}. *Code:* ${item.product.code}%0A   *Item:* ${encodeURIComponent(prodName)}%0A   *Qty:* ${item.quantity}%0A   *Category:* ${encodeURIComponent(item.product.category)}`;
+      const photoUrl = getPublicImageUrl(item.product.image);
+      return `${index + 1}. *Code:* ${item.product.code}%0A   *Item:* ${encodeURIComponent(prodName)}%0A   *Qty:* ${item.quantity}%0A   *Category:* ${encodeURIComponent(item.product.category)}%0A   *Photo:* ${encodeURIComponent(photoUrl)}`;
     }).join('%0A%0A');
 
     const totalQty = cart.reduce((sum, it) => sum + it.quantity, 0);

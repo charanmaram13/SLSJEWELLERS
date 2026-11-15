@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, MessageCircle, Gem, ExternalLink } from 'lucide-react';
 import { BRAND_INFO } from '../data/jewellery';
+import { getPublicImageUrl } from '../utils/whatsapp';
 
 export default function Lightbox({ item, onClose, onPrev, onNext }) {
   useEffect(() => {
@@ -23,8 +24,9 @@ export default function Lightbox({ item, onClose, onPrev, onNext }) {
 
   if (!item) return null;
 
+  const photoUrl = getPublicImageUrl(item.image);
   const whatsappInquireUrl = `https://wa.me/${BRAND_INFO.phoneRaw}?text=${encodeURIComponent(
-    `Hello SLS JEWELLERS, I am interested in inquiring about this piece from your Gallery: ${item.title} (${item.category} - ${item.specs}).`
+    `Hello SLS JEWELLERS, I am interested in inquiring about this piece from your Gallery: ${item.title} (${item.category} - ${item.specs}).\n\n📸 Photo: ${photoUrl}`
   )}`;
 
   return (
