@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-chocolate-dark: #2B1D15;
+    --color-chocolate-deep: #1C120C;
+    --color-chocolate-medium: #3A281D;
+    --color-gold-champagne: #DCC28F;
+    --color-gold-warm: #C9A062;
+    --color-ivory: #F6EFE1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #2B1D15;
+    color: #F6EFE1;
+    font-family: 'Jost', sans-serif;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #2B1D15;
+  }
+
+  /* Custom Luxury Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1C120C;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #DCC28F 0%, #C9A062 100%);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #DCC28F;
+  }
+}
+
+/* Luxury Typography & Gradients */
+.font-serif-luxury {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FBF8F3 0%, #DCC28F 35%, #C9A062 70%, #E7DEC9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-subtle {
+  background: linear-gradient(135deg, #DCC28F 0%, #C9A062 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-metallic {
+  background: linear-gradient(135deg, #DCC28F 0%, #C9A062 50%, #A67C3E 100%);
+}
+
+.border-gold-subtle {
+  border-color: rgba(220, 194, 143, 0.25);
+}
+
+.border-gold-glow {
+  border-color: rgba(201, 160, 98, 0.4);
+  box-shadow: 0 0 25px rgba(201, 160, 98, 0.15);
+}
+
+.glass-luxury {
+  background: rgba(43, 29, 21, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(220, 194, 143, 0.15);
+}
+
+.glass-card {
+  background: rgba(58, 40, 29, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(220, 194, 143, 0.18);
+}
+
+.glass-card-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card-hover:hover {
+  background: rgba(58, 40, 29, 0.85);
+  border-color: rgba(201, 160, 98, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(28, 18, 12, 0.6), 0 0 20px rgba(201, 160, 98, 0.12);
+}
+
+/* Perspective for 3D elements */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+/* Shimmer Keyframe */
+@keyframes goldShine {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-gold-shine {
+  background: linear-gradient(90deg, transparent, rgba(220, 194, 143, 0.35), transparent);
+  background-size: 200% 100%;
+  animation: goldShine 3s infinite;
+}
