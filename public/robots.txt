@@ -1,0 +1,5 @@
+# Robots.txt for SLS JEWELLERY WORKS
+User-agent: *
+Allow: /
+
+Sitemap: https://www.slsjewllerystore.store/sitemap.xml

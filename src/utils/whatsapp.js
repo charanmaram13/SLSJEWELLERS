@@ -21,8 +21,8 @@ export const getPublicImageUrl = (imagePath) => {
     return `${window.location.origin}${imagePath}`;
   }
 
-  // Reliable public fallback to repository raw URL
-  return `https://raw.githubusercontent.com/charanmaram13/SLSJEWELLERS/main/public${imagePath}`;
+  // Reliable production custom domain fallback
+  return `https://www.slsjewllerystore.store${imagePath}`;
 };
 
 /**
