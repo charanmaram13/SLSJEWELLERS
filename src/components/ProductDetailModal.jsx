@@ -141,7 +141,7 @@ export default function ProductDetailModal({ product, onClose }) {
                 <div className="p-3 rounded-xl bg-chocolate-900/60 border border-gold-champagne/15 space-y-1.5 text-xs text-ivory/70">
                   <div className="flex items-center gap-2">
                     <ShieldCheck className="w-3.5 h-3.5 text-gold-champagne" />
-                    <span>24 Karat Direct Manufacturer Craftsmanship</span>
+                    <span>24 Karat Gold Sheeted Craftsmanship</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Gem className="w-3.5 h-3.5 text-gold-champagne" />

@@ -17,7 +17,7 @@ export const BRAND_INFO = {
   whatsappUrl: "https://wa.me/919989222524",
   googleMapsUrl: "https://maps.google.com/?q=Veera+Raghavulu+Street+Sharraf+Bazar+Tenali+Andhra+Pradesh+522201",
   manufacturingFocus: "Direct Jewellery Manufacturer",
-  purityStandard: "24K Fine Gold Standard"
+  purityStandard: "24 Karat Gold Sheeted"
 };
 
 export const COLLECTIONS = [
@@ -27,7 +27,7 @@ export const COLLECTIONS = [
     subtitle: "Timeless Grace Around Your Neck",
     category: "Necklaces",
     description: "Sculpted with artistic finesse, our gold necklaces range from regal chokers to delicate contemporary collar pieces designed to illuminate every neckline.",
-    highlights: ["Bespoke Floral & Geometric Motifs", "Comfort Flex Articulation", "24K Solid Gold Finish"],
+    highlights: ["Bespoke Floral & Geometric Motifs", "Comfort Flex Articulation", "24 Karat Gold Sheeted Finish"],
     image: IMAGES.collections.necklaces.image,
     alt: IMAGES.collections.necklaces.alt,
     accent: "Masterpiece Artistry"

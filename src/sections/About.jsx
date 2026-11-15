@@ -98,7 +98,7 @@ export default function About() {
                     <span>{language === 'te' ? 'తెనాలి స్వర్ణకారుల వర్క్‌షాప్' : 'Tenali Goldsmith Workshop'}</span>
                   </div>
                   <p className="font-serif-luxury text-lg text-ivory">
-                    {language === 'te' ? '24K స్వచ్ఛమైన బంగారు ఆభరణాల తయారీ.' : 'Hand-finishing 24K gold ornaments with microscopic precision.'}
+                    {language === 'te' ? '24 క్యారెట్ బంగారం తాపడం ఆభరణాల తయారీ.' : 'Handcrafting 24 Karat gold sheeted ornaments with microscopic precision.'}
                   </p>
                 </div>
               </div>

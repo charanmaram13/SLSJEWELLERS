@@ -283,7 +283,7 @@ export default function JewelleryCarousel() {
                 <div className="p-4 rounded-xl bg-chocolate-950/70 border border-gold-champagne/15 space-y-2">
                   <div className="flex items-center gap-2 text-xs text-ivory/80">
                     <ShieldCheck className="w-4 h-4 text-gold-champagne shrink-0" />
-                    <span>Hallmarked 24 Karat Direct Manufacturer Craft</span>
+                    <span>24 Karat Gold Sheeted Direct Manufacturer Craft</span>
                   </div>
                   <div className="flex items-center gap-2 text-xs text-ivory/80">
                     <Sparkles className="w-4 h-4 text-gold-champagne shrink-0" />

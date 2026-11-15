@@ -78,7 +78,7 @@ export default function Footer() {
             <div className="flex items-center gap-4 text-xs text-gold-champagne pt-1">
               <div className="flex items-center gap-1.5">
                 <Gem className="w-4 h-4 text-gold-warm" />
-                <span>{language === 'te' ? '24K గోల్డ్ హాల్‌మార్క్' : '24K Gold Hallmark'}</span>
+                <span>{language === 'te' ? '24 క్యారెట్ బంగారం తాపడం' : '24 Karat Gold Sheeted'}</span>
               </div>
               <span>•</span>
               <div className="flex items-center gap-1.5">
