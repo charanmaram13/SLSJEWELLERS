@@ -1,259 +1,277 @@
 /**
- * SLS JEWELLERS - Centralized Luxury Photography Configuration
- * High-resolution, tested, realistic jewellery imagery curated for fine gold necklaces,
- * traditional harams, chains, earrings, bridal sets, and artisan craftsmanship.
+ * SLS JEWELLERS - Master Photography Configuration
+ * ALL photography is sourced 100% authentically from SLS JEWELLERS workshop PDF portfolio.
+ * Absolute local paths: /assets/products/SLS001.jpg - SLS099.jpg.
  */
 
 export const IMAGES = {
-  // Brand & Hero Imagery
+  // Brand & Hero Imagery (Authentic SLS Pieces from PDF)
   hero: {
-    mainNecklace: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=85",
-    alt: "SLS JEWELLERS Masterpiece Royal Gold Necklace",
-    bridalShowcase: "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1200&q=85",
-    altBridal: "Handcrafted Traditional Bridal Jewellery Set",
-    artisanHands: "https://images.unsplash.com/photo-1538370965046-79c0d6907d47?auto=format&fit=crop&w=1200&q=85",
-    altCraft: "Master Goldsmith at SLS JEWELLERS Bench"
+    mainNecklace: "/assets/products/SLS004.jpg",
+    alt: "SLS JEWELLERS Grand Lakshmi Temple Haram (SLS004)",
+    bridalShowcase: "/assets/products/SLS005.jpg",
+    altBridal: "Handcrafted Royal Kasu Haram with Lakshmi (SLS005)",
+    artisanHands: "/assets/products/SLS006.jpg",
+    altCraft: "Artisan Antique Temple Lakshmi Jhumkas (SLS006)"
   },
 
-  // About Section Editorial Imagery
+  // About Section Editorial Imagery (Authentic SLS Workshop Photography)
   about: {
-    workshop: "https://images.unsplash.com/photo-1588444650733-d0767b753fc8?auto=format&fit=crop&w=1200&q=85",
-    alt: "Precision goldsmith crafting fine jewellery at SLS JEWELLERS workshop",
-    showcase: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=85",
-    altShowcase: "Royal jewellery display with bespoke gold ornament"
+    workshop: "/assets/products/SLS042.jpg",
+    alt: "Authentic SLS JEWELLERS handcrafted 22K gold necklace with workshop authentication card (SLS042)",
+    showcase: "/assets/products/SLS002.jpg",
+    altShowcase: "SLS JEWELLERS Traditional Kasumala & Ruby Floral Necklace (SLS002)"
   },
 
-  // Collections (6 Core Categories)
+  // Collections (6 Core Categories from PDF)
   collections: {
     necklaces: {
-      image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1000&q=85",
-      alt: "Exquisite Handcrafted Gold Necklace"
+      image: "/assets/products/SLS002.jpg",
+      alt: "SLS JEWELLERS Kasumala & Ruby Floral Necklace (SLS002)"
     },
     harams: {
-      image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1000&q=85",
-      alt: "Traditional Royal Gold Haram with Heritage Motifs"
+      image: "/assets/products/SLS004.jpg",
+      alt: "SLS JEWELLERS Grand Lakshmi Temple Haram (SLS004)"
     },
     chains: {
-      image: "https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=1000&q=85",
-      alt: "Hand-Interlocked Pure Gold Chains"
+      image: "/assets/products/SLS020.jpg",
+      alt: "SLS JEWELLERS 22K Hand-Interlocked Solid Gold Chain (SLS020)"
     },
     earrings: {
-      image: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1000&q=85",
-      alt: "Intricate Gold Jhumkas and Chandelier Earrings"
+      image: "/assets/products/SLS006.jpg",
+      alt: "SLS JEWELLERS Antique Temple Lakshmi Bell Jhumkas (SLS006)"
     },
     bridal: {
-      image: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=1000&q=85",
-      alt: "Complete Indian Bridal Gold Jewellery Ensemble"
+      image: "/assets/products/SLS005.jpg",
+      alt: "SLS JEWELLERS Royal Kasu Haram Bridal Masterpiece (SLS005)"
     },
     traditional: {
-      image: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=1000&q=85",
-      alt: "Traditional Heritage Gold Jewellery"
+      image: "/assets/products/SLS001.jpg",
+      alt: "SLS JEWELLERS Bhagavan Balaji Gold Deity Idol (SLS001)"
     }
   },
 
-  // Interactive 3D Runway Carousel Items
+  // Interactive 3D Runway Carousel Items (Authentic SLS Pieces from PDF)
   runway: [
     {
       id: "runway-1",
-      title: "Mayura Royal Haram",
+      code: "SLS004",
+      title: "Grand Lakshmi Temple Haram",
       category: "Harams",
       purity: "22K Traditional Hallmark",
-      description: "An opulent multi-tier temple haram inspired by sacred peacock motifs, featuring cascading drops and micro-filigree borders.",
-      image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1000&q=85",
-      alt: "Mayura Royal Gold Haram"
+      description: "An opulent multi-tier temple haram featuring Goddess Lakshmi surrounded by sacred peacock motifs and micro-filigree beads.",
+      image: "/assets/products/SLS004.jpg",
+      alt: "SLS004 Grand Lakshmi Temple Haram"
     },
     {
       id: "runway-2",
-      title: "Ratnakara Bridal Choker",
-      category: "Bridal Jewellery",
+      code: "SLS003",
+      title: "Ruby & Emerald Floral Choker",
+      category: "Necklaces",
       purity: "22K Solid Gold",
-      description: "An architectural collar choker engineered with seamless flex joints for supreme comfort and imperial bridal majesty.",
-      image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1000&q=85",
-      alt: "Ratnakara Bridal Gold Choker"
+      description: "Architectural floral collar choker embedded with brilliant rubies, emeralds, and hanging pearl accents for wedding majesty.",
+      image: "/assets/products/SLS003.jpg",
+      alt: "SLS003 Ruby & Emerald Floral Choker"
     },
     {
       id: "runway-3",
-      title: "Padma Heritage Jhumkas",
+      code: "SLS006",
+      title: "Temple Lakshmi Jhumkas",
       category: "Earrings",
       purity: "22K Fine Gold",
-      description: "Cascading bell jhumkas accented with delicate floral engravings, bead filigree, and lightweight balance.",
-      image: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1000&q=85",
-      alt: "Padma Heritage Gold Jhumkas"
+      description: "Cascading antique bell jhumkas crowned with divine Lakshmi motifs and delicate gold pearl cluster drops.",
+      image: "/assets/products/SLS006.jpg",
+      alt: "SLS006 Temple Lakshmi Jhumkas"
     },
     {
       id: "runway-4",
+      code: "SLS020",
       title: "Vajra Interlock Gold Chain",
       category: "Chains",
       purity: "22K Master Linked",
-      description: "Heavy-gauge woven gold links hand-beveled at each facet to reflect radiant luster under every angle of light.",
-      image: "https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=1000&q=85",
-      alt: "Vajra Interlock Gold Chain"
+      description: "Durable hand-woven solid gold links hand-beveled at each facet to reflect radiant luster under every angle of light.",
+      image: "/assets/products/SLS020.jpg",
+      alt: "SLS020 Vajra Interlock Gold Chain"
     },
     {
       id: "runway-5",
-      title: "Devi Shringar Bridal Set",
-      category: "Bridal Jewellery",
+      code: "SLS005",
+      title: "Royal Kasumala Bridal Haram",
+      category: "Bridal",
       purity: "22K Wedding Heritage",
-      description: "A comprehensive bridal ensemble uniting waist belt (Vaddanam), long haram, choker, and matching balance ornaments.",
-      image: "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1000&q=85",
-      alt: "Devi Shringar Bridal Gold Set"
+      description: "A prestigious Andhra bridal coin haram featuring Goddess Lakshmi coins aligned with royal precision for auspicious muhurthams.",
+      image: "/assets/products/SLS005.jpg",
+      alt: "SLS005 Royal Kasumala Bridal Haram"
     },
     {
       id: "runway-6",
-      title: "Ananya Kasumala Necklace",
-      category: "Traditional",
+      code: "SLS002",
+      title: "Traditional Kasumala Floral Necklace",
+      category: "Necklaces",
       purity: "22K Heritage Minted",
-      description: "A legendary Andhra heritage coin necklace with precisely embossed divine emblems strung seamlessly along a woven gold band.",
-      image: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=1000&q=85",
-      alt: "Ananya Traditional Kasumala Gold Necklace"
+      description: "Heritage coin necklace with ruby-studded floral medallions strung along a woven gold band crafted in Tenali.",
+      image: "/assets/products/SLS002.jpg",
+      alt: "SLS002 Traditional Kasumala Floral Necklace"
     }
   ],
 
-  // Craftsmanship Scroll Steps
+  // Craftsmanship Scroll Steps (Authentic Workshop Creations from PDF)
   craftsmanship: [
     {
       step: "01",
       title: "Design Inspiration",
       subtitle: "Heritage Meets Contemporary Vision",
-      description: "Every piece begins with hand-drawn silhouettes inspired by South Indian temple architecture, nature's organic curves, and heirloom design traditions. Proportions are perfected before gold is ever touched.",
-      image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=85",
-      alt: "Artisan sketching bespoke jewellery design in sketchbook"
+      description: "Every piece begins with traditional sketches honoring Andhra Pradesh temple aesthetics, sacred motifs, and royal heritage proportions.",
+      image: "/assets/products/SLS011.jpg",
+      alt: "SLS JEWELLERS Heritage Choker Design (SLS011)"
     },
     {
       step: "02",
       title: "Precision Crafting",
       subtitle: "The Master Goldsmith's Bench",
-      description: "Pure gold is alloyed to 22 Karat perfection, then transformed into delicate wires, plates, and structural skeletons using age-old rolling mills and hand tools passed down through generations in Tenali.",
-      image: "https://images.unsplash.com/photo-1588444650733-d0767b753fc8?auto=format&fit=crop&w=1200&q=85",
-      alt: "Goldsmith hand forging precious metal at bench"
+      description: "Pure gold is alloyed to 22 Karat perfection, then transformed into delicate wires, plates, and structural skeletons in our Sharraf Bazar workshop.",
+      image: "/assets/products/SLS015.jpg",
+      alt: "SLS JEWELLERS 22K Solid Gold Neckpiece (SLS015)"
     },
     {
       step: "03",
       title: "Intricate Detailing",
       subtitle: "Micro-Filigree & Nakshi Relief",
-      description: "Master artisans carve miniature floral motifs, set ornamental accents, and solder interlocking links under magnification. Hours of steady handwork breathe soul into the precious metal.",
-      image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1200&q=85",
-      alt: "Detailed hand engraving on gold jewellery piece"
+      description: "Master artisans carve miniature floral motifs, secure auspicious gemstones, and solder interlocking links with microscopic attention to detail.",
+      image: "/assets/products/SLS025.jpg",
+      alt: "SLS JEWELLERS Intricately Crafted Haram (SLS025)"
     },
     {
       step: "04",
       title: "Final Finishing",
       subtitle: "Mirror Polish & Rigorous Inspection",
-      description: "The completed jewel undergoes diamond-lap burnishing, ultrasonic purification, and microscopic inspection for flawless durability, radiant glow, and silky comfort against skin.",
-      image: "https://images.unsplash.com/photo-1538370965046-79c0d6907d47?auto=format&fit=crop&w=1200&q=85",
-      alt: "Master jeweller inspecting polished finished ornament"
+      description: "The completed jewel undergoes diamond-lap burnishing and multi-point inspection for flawless durability, radiant glow, and heirloom longevity.",
+      image: "/assets/products/SLS004.jpg",
+      alt: "SLS JEWELLERS Completed Masterpiece (SLS004)"
     }
   ],
 
-  // Gallery Items (Categories: Necklaces, Harams, Chains, Earrings, Bridal)
+  // Gallery Archive (All 12 items sourced directly from PDF photography)
   gallery: [
     {
       id: "gal-1",
-      title: "Aura Royale Statement Necklace",
+      code: "SLS002",
+      title: "Kasumala Ruby Floral Necklace",
       category: "Necklaces",
-      image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1000&q=85",
-      alt: "Aura Royale Statement Gold Necklace",
-      tag: "Signature Masterpiece",
-      specs: "22K Gold • Handcrafted Filigree"
+      image: "/assets/products/SLS002.jpg",
+      alt: "SLS002 Kasumala Ruby Floral Necklace",
+      tag: "Workshop Exclusive",
+      specs: "22K Solid Gold • Ruby Motifs"
     },
     {
       id: "gal-2",
-      title: "Kalyani Grand Temple Haram",
+      code: "SLS004",
+      title: "Grand Lakshmi Temple Haram",
       category: "Harams",
-      image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1000&q=85",
-      alt: "Kalyani Grand Temple Haram",
-      tag: "Heritage Craft",
-      specs: "22K Traditional Gold • 3-Tier"
+      image: "/assets/products/SLS004.jpg",
+      alt: "SLS004 Grand Lakshmi Temple Haram",
+      tag: "Heritage Masterpiece",
+      specs: "22K Traditional Gold • Temple Nakshi"
     },
     {
       id: "gal-3",
-      title: "Suvarna Sovereign Link Chain",
+      code: "SLS020",
+      title: "Classic Interlocking Gold Chain",
       category: "Chains",
-      image: "https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=1000&q=85",
-      alt: "Suvarna Sovereign Interlocked Gold Chain",
+      image: "/assets/products/SLS020.jpg",
+      alt: "SLS020 Classic Interlocking Gold Chain",
       tag: "Everyday Luxury",
       specs: "22K Solid Gold • Precision Link"
     },
     {
       id: "gal-4",
-      title: "Chandramukhi Chandelier Jhumkas",
+      code: "SLS006",
+      title: "Antique Temple Lakshmi Jhumkas",
       category: "Earrings",
-      image: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1000&q=85",
-      alt: "Chandramukhi Chandelier Gold Jhumkas",
-      tag: "Festive Glamour",
-      specs: "22K Gold • Micro-beaded Drop"
+      image: "/assets/products/SLS006.jpg",
+      alt: "SLS006 Antique Temple Lakshmi Jhumkas",
+      tag: "Festive Splendor",
+      specs: "22K Gold • Handcrafted Bell Drops"
     },
     {
       id: "gal-5",
-      title: "Vadhuvu Royal Bridal Ensemble",
+      code: "SLS005",
+      title: "Royal Kasu Bridal Haram",
       category: "Bridal",
-      image: "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1000&q=85",
-      alt: "Vadhuvu Royal Bridal Gold Ensemble",
-      tag: "Muhurtham Masterpiece",
-      specs: "Comprehensive Bridal Trousseau"
+      image: "/assets/products/SLS005.jpg",
+      alt: "SLS005 Royal Kasu Bridal Haram",
+      tag: "Muhurtham Grandeur",
+      specs: "Comprehensive Bridal Heirloom"
     },
     {
       id: "gal-6",
-      title: "Tejas Classic Heritage Choker",
+      code: "SLS003",
+      title: "Ruby & Emerald Floral Choker",
       category: "Necklaces",
-      image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1000&q=85",
-      alt: "Tejas Classic Heritage Gold Choker",
-      tag: "Timeless Cut",
-      specs: "22K Hand-faceted Collar"
+      image: "/assets/products/SLS003.jpg",
+      alt: "SLS003 Ruby & Emerald Floral Choker",
+      tag: "Artisan Collar",
+      specs: "22K Gold • Natural Gemstones"
     },
     {
       id: "gal-7",
-      title: "Gajalakshmi Nakshi Long Haram",
+      code: "SLS011",
+      title: "Imperial Lakshmi Heritage Haram",
       category: "Harams",
-      image: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=1000&q=85",
-      alt: "Gajalakshmi Nakshi Long Gold Haram",
+      image: "/assets/products/SLS011.jpg",
+      alt: "SLS011 Imperial Lakshmi Heritage Haram",
       tag: "Temple Artistry",
-      specs: "Deep Repoussé Nakshi Work"
+      specs: "22K Gold • Deep Nakshi Relief"
     },
     {
       id: "gal-8",
-      title: "Karnika Lotus Studs & Drops",
+      code: "SLS014",
+      title: "Artisan Floral Gold Earrings",
       category: "Earrings",
-      image: "https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?auto=format&fit=crop&w=1000&q=85",
-      alt: "Karnika Lotus Gold Studs and Drops",
-      tag: "Floral Motif",
-      specs: "22K Gold • Ergonomic Post"
+      image: "/assets/products/SLS014.jpg",
+      alt: "SLS014 Artisan Floral Gold Earrings",
+      tag: "Delicate Flora",
+      specs: "22K Gold • Hand-faceted Drops"
     },
     {
       id: "gal-9",
-      title: "Maharani Wedding Choker Set",
+      code: "SLS007",
+      title: "South Indian Bridal Haram Set",
       category: "Bridal",
-      image: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=1000&q=85",
-      alt: "Maharani Wedding Gold Choker Set",
-      tag: "Bridal Heirloom",
-      specs: "Full Neckpiece with Matching Drops"
+      image: "/assets/products/SLS007.jpg",
+      alt: "SLS007 South Indian Bridal Haram Set",
+      tag: "Bridal Trousseau",
+      specs: "22K Hallmarked Gold Set"
     },
     {
       id: "gal-10",
-      title: "Rudra Dual-Tone Curb Chain",
+      code: "SLS021",
+      title: "High-Polish Rope Pattern Chain",
       category: "Chains",
-      image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=1000&q=85",
-      alt: "Rudra Dual-Tone Curb Gold Chain",
+      image: "/assets/products/SLS021.jpg",
+      alt: "SLS021 High-Polish Rope Pattern Chain",
       tag: "Artisan Link",
-      specs: "22K Gold • High Polish Bevel"
+      specs: "22K Gold • Flexible Weave"
     },
     {
       id: "gal-11",
-      title: "Siddhi Filigree Medallion Chain",
+      code: "SLS017",
+      title: "Heritage Filigree Festoon Necklace",
       category: "Necklaces",
-      image: "https://images.unsplash.com/photo-1598560917505-59a3ad559071?auto=format&fit=crop&w=1000&q=85",
-      alt: "Siddhi Filigree Medallion Gold Chain",
-      tag: "Bespoke Centerpiece",
-      specs: "22K Gold • Hand Woven Chain"
+      image: "/assets/products/SLS017.jpg",
+      alt: "SLS017 Heritage Filigree Festoon Necklace",
+      tag: "Tenali Special",
+      specs: "22K Gold • Micro-filigree"
     },
     {
       id: "gal-12",
-      title: "Nitya Cascading Chandelier Earrings",
+      code: "SLS022",
+      title: "Royal Temple Deity Jhumkas",
       category: "Earrings",
-      image: "https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=1000&q=85",
-      alt: "Nitya Cascading Chandelier Gold Earrings",
-      tag: "Modern Heritage",
-      specs: "Lightweight 22K Gold Flow"
+      image: "/assets/products/SLS022.jpg",
+      alt: "SLS022 Royal Temple Deity Jhumkas",
+      tag: "Sacred Splendor",
+      specs: "22K Gold • Lightweight Balance"
     }
   ]
 };
