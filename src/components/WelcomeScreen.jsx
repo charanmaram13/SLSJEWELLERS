@@ -21,7 +21,7 @@ export default function WelcomeScreen() {
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <img
             src="/assets/products/SLS004.jpg"
-            alt="SLS JEWELLERS Temple Jewellery Background"
+            alt="SLS JEWELLERY WORKS Temple Jewellery Background"
             className="w-full h-full object-cover object-center scale-105 filter blur-[3px] opacity-25"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#1C120C]/95 via-[#2B1D15]/90 to-[#1C120C]/98" />
@@ -47,7 +47,7 @@ export default function WelcomeScreen() {
             <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white border-2 border-gold-champagne flex items-center justify-center shadow-[0_0_25px_rgba(220,194,143,0.35)] overflow-hidden p-1">
               <img
                 src="/assets/logo.jpg"
-                alt="SLS JEWELLERS Logo"
+                alt="SLS JEWELLERY WORKS Logo"
                 className="w-full h-full object-contain"
               />
             </div>
@@ -55,8 +55,8 @@ export default function WelcomeScreen() {
 
           {/* Brand Name & Location */}
           <div className="space-y-1 mb-6">
-            <h1 className="font-serif-luxury text-3xl sm:text-4xl font-semibold tracking-[0.2em] text-gold-gradient uppercase">
-              SLS JEWELLERS
+            <h1 className="font-serif-luxury text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[0.16em] text-gold-gradient uppercase">
+              SLS JEWELLERY WORKS
             </h1>
             <div className="flex items-center justify-center gap-2 text-xs tracking-[0.25em] text-gold-champagne/80 font-medium uppercase pt-1">
               <MapPin className="w-3.5 h-3.5 text-gold-warm" />
@@ -70,10 +70,10 @@ export default function WelcomeScreen() {
           {/* Dual Language Welcome Headings */}
           <div className="space-y-2 mb-8">
             <h2 className="font-serif-luxury text-2xl sm:text-3xl font-light text-ivory">
-              Welcome to SLS JEWELLERS
+              Welcome to SLS JEWELLERY WORKS
             </h2>
             <h3 className="font-telugu text-xl sm:text-2xl font-medium text-gold-champagne">
-              SLS JEWELLERS కు స్వాగతం
+              SLS జ్యువెలరీ వర్క్స్ కు స్వాగతం
             </h3>
           </div>
 

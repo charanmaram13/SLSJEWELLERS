@@ -1,6 +1,6 @@
 /**
- * SLS JEWELLERS - Master Photography Configuration
- * ALL photography is sourced 100% authentically from SLS JEWELLERS workshop PDF portfolio.
+ * SLS JEWELLERY WORKS - Master Photography Configuration
+ * ALL photography is sourced 100% authentically from SLS JEWELLERY WORKS workshop PDF portfolio.
  * Absolute local paths: /assets/products/SLS001.jpg - SLS099.jpg.
  */
 
@@ -8,7 +8,7 @@ export const IMAGES = {
   // Brand & Hero Imagery (Authentic SLS Pieces from PDF)
   hero: {
     mainNecklace: "/assets/products/SLS004.jpg",
-    alt: "SLS JEWELLERS Grand Lakshmi Temple Haram (SLS004)",
+    alt: "SLS JEWELLERY WORKS Grand Lakshmi Temple Haram (SLS004)",
     bridalShowcase: "/assets/products/SLS005.jpg",
     altBridal: "Handcrafted Royal Kasu Haram with Lakshmi (SLS005)",
     artisanHands: "/assets/products/SLS006.jpg",
@@ -18,36 +18,36 @@ export const IMAGES = {
   // About Section Editorial Imagery (Authentic SLS Workshop Photography)
   about: {
     workshop: "/assets/products/SLS042.jpg",
-    alt: "Authentic SLS JEWELLERS handcrafted 22K gold necklace with workshop authentication card (SLS042)",
+    alt: "Authentic SLS JEWELLERY WORKS handcrafted 22K gold necklace with workshop authentication card (SLS042)",
     showcase: "/assets/products/SLS002.jpg",
-    altShowcase: "SLS JEWELLERS Traditional Kasumala & Ruby Floral Necklace (SLS002)"
+    altShowcase: "SLS JEWELLERY WORKS Traditional Kasumala & Ruby Floral Necklace (SLS002)"
   },
 
   // Collections (6 Core Categories from PDF)
   collections: {
     necklaces: {
       image: "/assets/products/SLS002.jpg",
-      alt: "SLS JEWELLERS Kasumala & Ruby Floral Necklace (SLS002)"
+      alt: "SLS JEWELLERY WORKS Kasumala & Ruby Floral Necklace (SLS002)"
     },
     harams: {
       image: "/assets/products/SLS004.jpg",
-      alt: "SLS JEWELLERS Grand Lakshmi Temple Haram (SLS004)"
+      alt: "SLS JEWELLERY WORKS Grand Lakshmi Temple Haram (SLS004)"
     },
     chains: {
       image: "/assets/products/SLS020.jpg",
-      alt: "SLS JEWELLERS 22K Hand-Interlocked Solid Gold Chain (SLS020)"
+      alt: "SLS JEWELLERY WORKS 22K Hand-Interlocked Solid Gold Chain (SLS020)"
     },
     earrings: {
       image: "/assets/products/SLS006.jpg",
-      alt: "SLS JEWELLERS Antique Temple Lakshmi Bell Jhumkas (SLS006)"
+      alt: "SLS JEWELLERY WORKS Antique Temple Lakshmi Bell Jhumkas (SLS006)"
     },
     bridal: {
       image: "/assets/products/SLS005.jpg",
-      alt: "SLS JEWELLERS Royal Kasu Haram Bridal Masterpiece (SLS005)"
+      alt: "SLS JEWELLERY WORKS Royal Kasu Haram Bridal Masterpiece (SLS005)"
     },
     traditional: {
       image: "/assets/products/SLS001.jpg",
-      alt: "SLS JEWELLERS Bhagavan Balaji Gold Deity Idol (SLS001)"
+      alt: "SLS JEWELLERY WORKS Bhagavan Balaji Gold Deity Idol (SLS001)"
     }
   },
 
@@ -123,7 +123,7 @@ export const IMAGES = {
       subtitle: "Heritage Meets Contemporary Vision",
       description: "Every piece begins with traditional sketches honoring Andhra Pradesh temple aesthetics, sacred motifs, and royal heritage proportions.",
       image: "/assets/products/SLS011.jpg",
-      alt: "SLS JEWELLERS Heritage Choker Design (SLS011)"
+      alt: "SLS JEWELLERY WORKS Heritage Choker Design (SLS011)"
     },
     {
       step: "02",
@@ -131,7 +131,7 @@ export const IMAGES = {
       subtitle: "The Master Goldsmith's Bench",
       description: "Pure gold is alloyed to 22 Karat perfection, then transformed into delicate wires, plates, and structural skeletons in our Sharraf Bazar workshop.",
       image: "/assets/products/SLS015.jpg",
-      alt: "SLS JEWELLERS 22K Solid Gold Neckpiece (SLS015)"
+      alt: "SLS JEWELLERY WORKS 22K Solid Gold Neckpiece (SLS015)"
     },
     {
       step: "03",
@@ -139,7 +139,7 @@ export const IMAGES = {
       subtitle: "Micro-Filigree & Nakshi Relief",
       description: "Master artisans carve miniature floral motifs, secure auspicious gemstones, and solder interlocking links with microscopic attention to detail.",
       image: "/assets/products/SLS025.jpg",
-      alt: "SLS JEWELLERS Intricately Crafted Haram (SLS025)"
+      alt: "SLS JEWELLERY WORKS Intricately Crafted Haram (SLS025)"
     },
     {
       step: "04",
@@ -147,7 +147,7 @@ export const IMAGES = {
       subtitle: "Mirror Polish & Rigorous Inspection",
       description: "The completed jewel undergoes diamond-lap burnishing and multi-point inspection for flawless durability, radiant glow, and heirloom longevity.",
       image: "/assets/products/SLS004.jpg",
-      alt: "SLS JEWELLERS Completed Masterpiece (SLS004)"
+      alt: "SLS JEWELLERY WORKS Completed Masterpiece (SLS004)"
     }
   ],
 

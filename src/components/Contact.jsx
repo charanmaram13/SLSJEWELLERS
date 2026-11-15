@@ -40,7 +40,7 @@ export default function Contact() {
   };
 
   const handleWhatsAppDirect = () => {
-    const formattedMsg = `*New Website Enquiry for SLS JEWELLERS*%0A%0A*Name:* ${encodeURIComponent(
+    const formattedMsg = `*New Website Enquiry for SLS JEWELLERY WORKS*%0A%0A*Name:* ${encodeURIComponent(
       formData.name
     )}%0A*Phone:* ${encodeURIComponent(formData.phone)}%0A*Interest:* ${encodeURIComponent(
       formData.category
@@ -105,8 +105,8 @@ export default function Contact() {
                   <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-gold-champagne/80 font-semibold block mb-0.5">
                     {language === 'te' ? 'తయారీ కేంద్రం & కార్యాలయం' : 'MANUFACTURING WORKSHOP & OFFICE'}
                   </span>
-                  <h3 className="font-serif-luxury text-2xl sm:text-3xl font-semibold text-gold-gradient uppercase tracking-wider">
-                    SLS JEWELLERS
+                  <h3 className="font-serif-luxury text-xl sm:text-2xl font-semibold text-gold-gradient uppercase tracking-wider">
+                    SLS JEWELLERY WORKS
                   </h3>
                 </div>
               </div>

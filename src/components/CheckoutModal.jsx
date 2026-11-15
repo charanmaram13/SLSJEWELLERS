@@ -44,7 +44,7 @@ export default function CheckoutModal() {
 
     const totalQty = cart.reduce((sum, it) => sum + it.quantity, 0);
 
-    const fullMessage = `*NEW JEWELLERY ENQUIRY*%0A*SLS JEWELLERS – TENALI*%0A========================%0A*Customer Details:*%0A*Name:* ${encodeURIComponent(formData.name)}%0A*Mobile:* ${encodeURIComponent(formData.phone)}%0A*Location / Village:* ${encodeURIComponent(formData.location)}${formData.message.trim() ? `%0A*Note:* ${encodeURIComponent(formData.message)}` : ''}%0A========================%0A*SELECTED JEWELLERY ITEMS (${cart.length} Products, ${totalQty} Total Qty):*%0A%0A${itemsList}%0A%0A========================%0A_Please confirm gold availability, approximate gram weight and pricing._`;
+    const fullMessage = `*NEW JEWELLERY ENQUIRY*%0A*SLS JEWELLERY WORKS – TENALI*%0A========================%0A*Customer Details:*%0A*Name:* ${encodeURIComponent(formData.name)}%0A*Mobile:* ${encodeURIComponent(formData.phone)}%0A*Location / Village:* ${encodeURIComponent(formData.location)}${formData.message.trim() ? `%0A*Note:* ${encodeURIComponent(formData.message)}` : ''}%0A========================%0A*SELECTED JEWELLERY ITEMS (${cart.length} Products, ${totalQty} Total Qty):*%0A%0A${itemsList}%0A%0A========================%0A_Please confirm gold availability, approximate gram weight and pricing._`;
 
     // Open WhatsApp
     window.open(`https://wa.me/${BRAND_INFO.phoneRaw}?text=${fullMessage}`, '_blank');
@@ -86,7 +86,7 @@ export default function CheckoutModal() {
           {/* Header */}
           <div className="pr-10 mb-6">
             <span className="font-sans text-[10px] tracking-[0.25em] uppercase text-gold-champagne/80 font-semibold block mb-1">
-              SLS JEWELLERS · TENALI
+              SLS JEWELLERY WORKS · TENALI
             </span>
             <h3 className="font-serif-luxury text-2xl sm:text-3xl text-ivory font-normal">
               {t('checkoutTitle')}

@@ -20,7 +20,7 @@ export default function CollectionCard({ collection }) {
 
   const photoUrl = getPublicImageUrl(collection.image);
   const whatsappCollectionUrl = `https://wa.me/${BRAND_INFO.phoneRaw}?text=${encodeURIComponent(
-    `Hello SLS JEWELLERS, I am interested in viewing your ${collection.title} collection from your website.\n\n📸 Sample Photo: ${photoUrl}`
+    `Hello SLS JEWELLERY WORKS, I am interested in viewing your ${collection.title} collection from your website.\n\n📸 Sample Photo: ${photoUrl}`
   )}`;
 
   return (

@@ -28,7 +28,7 @@ export default function ProductDetailModal({ product, onClose }) {
 
   const handleWhatsAppEnquiry = async () => {
     setIsSharing(true);
-    const text = `Hello SLS JEWELLERS, I am inquiring about product *${product.code}* - ${prodName} from your digital catalogue.\nCategory: ${product.category}\nQuantity: ${qty}\nPlease share approximate gram weight and current pricing details.`;
+    const text = `Hello SLS JEWELLERY WORKS, I am inquiring about product *${product.code}* - ${prodName} from your digital catalogue.\nCategory: ${product.category}\nQuantity: ${qty}\nPlease share approximate gram weight and current pricing details.`;
     
     await sendWhatsAppWithImage({
       text,

@@ -55,13 +55,13 @@ export default function Footer() {
               <div className="w-14 h-14 rounded-full border-2 border-gold-champagne flex items-center justify-center bg-white shadow-lg overflow-hidden p-1 shrink-0">
                 <img
                   src="/assets/logo.jpg"
-                  alt="SLS JEWELLERS Official Logo"
+                  alt="SLS JEWELLERY WORKS Official Logo"
                   className="w-full h-full object-contain"
                 />
               </div>
               <div>
-                <span className="font-serif-luxury text-2xl tracking-[0.2em] font-semibold text-gold-gradient uppercase block">
-                  SLS JEWELLERS
+                <span className="font-serif-luxury text-xl sm:text-2xl tracking-[0.16em] font-semibold text-gold-gradient uppercase block">
+                  SLS JEWELLERY WORKS
                 </span>
                 <span className="font-sans text-[10px] tracking-[0.35em] text-gold-champagne/75 uppercase">
                   {language === 'te' ? 'బంగారు ఆభరణాల తయారీదారులు' : 'PREMIUM JEWELLERY MANUFACTURER'}
@@ -163,7 +163,7 @@ export default function Footer() {
         {/* Bottom Bar: Copyright & Back-to-Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-ivory/50">
           <p className="text-center sm:text-left">
-            © {new Date().getFullYear()} <span className="text-gold-champagne">SLS JEWELLERS</span>. {t('copyright')}
+            © {new Date().getFullYear()} <span className="text-gold-champagne">SLS JEWELLERY WORKS</span>. {t('copyright')}
           </p>
 
           <button

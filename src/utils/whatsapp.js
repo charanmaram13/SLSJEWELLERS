@@ -94,7 +94,7 @@ export const sendWhatsAppWithImage = async ({
   text,
   imagePath,
   phone = BRAND_INFO.phoneRaw,
-  title = 'SLS JEWELLERS Enquiry'
+  title = 'SLS JEWELLERY WORKS Enquiry'
 }) => {
   const imageUrl = getPublicImageUrl(imagePath);
   

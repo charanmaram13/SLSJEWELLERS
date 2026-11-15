@@ -26,7 +26,7 @@ export default function Lightbox({ item, onClose, onPrev, onNext }) {
 
   const photoUrl = getPublicImageUrl(item.image);
   const whatsappInquireUrl = `https://wa.me/${BRAND_INFO.phoneRaw}?text=${encodeURIComponent(
-    `Hello SLS JEWELLERS, I am interested in inquiring about this piece from your Gallery: ${item.title} (${item.category} - ${item.specs}).\n\n📸 Photo: ${photoUrl}`
+    `Hello SLS JEWELLERY WORKS, I am interested in inquiring about this piece from your Gallery: ${item.title} (${item.category} - ${item.specs}).\n\n📸 Photo: ${photoUrl}`
   )}`;
 
   return (
@@ -115,7 +115,7 @@ export default function Lightbox({ item, onClose, onPrev, onNext }) {
                   <span>{item.specs}</span>
                 </div>
                 <div className="text-xs text-ivory/60 leading-relaxed">
-                  Crafted by master goldsmiths at SLS JEWELLERS in Sharraf Bazar, Tenali. Custom gram variations available.
+                  Crafted by master goldsmiths at SLS JEWELLERY WORKS in Sharraf Bazar, Tenali. Custom gram variations available.
                 </div>
               </div>
             </div>

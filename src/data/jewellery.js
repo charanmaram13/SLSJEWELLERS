@@ -1,12 +1,12 @@
 import { IMAGES } from './images';
 
 export const BRAND_INFO = {
-  name: "SLS JEWELLERS",
+  name: "SLS JEWELLERY WORKS",
   shortName: "SLS",
   tagline: "Where Elegance Becomes Eternal",
   eyebrow: "THE ART OF FINE JEWELLERY",
   description: "Discover timeless jewellery crafted with passion, precision and an uncompromising eye for detail.",
-  aboutStory: "SLS JEWELLERS represents the beauty of craftsmanship, attention to detail and a passion for fine jewellery. Based in Tenali, Andhra Pradesh, we bring together traditional inspiration and refined jewellery-making.",
+  aboutStory: "SLS JEWELLERY WORKS represents the beauty of craftsmanship, attention to detail and a passion for fine jewellery. Based in Tenali, Andhra Pradesh, we bring together traditional inspiration and refined jewellery-making.",
   phone: "+91 99892 22524",
   phoneRaw: "919989222524",
   phoneDisplay: "+91 99892 22524",

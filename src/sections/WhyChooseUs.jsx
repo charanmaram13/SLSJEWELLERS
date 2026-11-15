@@ -94,9 +94,9 @@ export default function WhyChooseUs() {
 
           <h2 className="font-serif-luxury text-3xl sm:text-5xl md:text-6xl font-light text-ivory tracking-tight">
             {language === 'te' ? (
-              <>SLS JEWELLERS ను <span className="italic text-gold-gradient font-normal">ఎందుకు ఎంచుకోవాలి?</span></>
+              <>SLS జ్యువెలరీ వర్క్స్ ను <span className="italic text-gold-gradient font-normal">ఎందుకు ఎంచుకోవాలి?</span></>
             ) : (
-              <>Why Choose <span className="italic text-gold-gradient font-normal">SLS JEWELLERS?</span></>
+              <>Why Choose <span className="italic text-gold-gradient font-normal">SLS JEWELLERY WORKS?</span></>
             )}
           </h2>
           <p className="font-sans text-sm sm:text-base text-ivory/70 font-light max-w-xl mx-auto mt-4 leading-relaxed">

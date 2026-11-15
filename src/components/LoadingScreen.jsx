@@ -53,7 +53,7 @@ export default function LoadingScreen({ onComplete }) {
               <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-full bg-white border-2 border-gold-champagne flex items-center justify-center shadow-[0_0_30px_rgba(220,194,143,0.4)] overflow-hidden p-1.5 z-10">
                 <img
                   src="/assets/logo.jpg"
-                  alt="SLS JEWELLERS Official Logo"
+                  alt="SLS JEWELLERY WORKS Official Logo"
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -66,8 +66,8 @@ export default function LoadingScreen({ onComplete }) {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="mb-4"
             >
-              <h1 className="font-serif-luxury text-3xl md:text-5xl font-semibold tracking-[0.25em] text-gold-gradient uppercase">
-                SLS JEWELLERS
+              <h1 className="font-serif-luxury text-2xl md:text-5xl font-semibold tracking-[0.2em] text-gold-gradient uppercase">
+                SLS JEWELLERY WORKS
               </h1>
               <p className="font-sans text-xs md:text-sm tracking-[0.35em] text-gold-champagne/75 uppercase mt-2">
                 TENALI • ESTEEMED MANUFACTURER

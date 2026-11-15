@@ -1,6 +1,6 @@
 /**
- * SLS JEWELLERS - Master Product Catalogue
- * Real jewellery photography extracted directly from SLS JEWELLERS workshop portfolio.
+ * SLS JEWELLERY WORKS - Master Product Catalogue
+ * Real jewellery photography extracted directly from SLS JEWELLERY WORKS workshop portfolio.
  */
 
 export const PRODUCTS = [

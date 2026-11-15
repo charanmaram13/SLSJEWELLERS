@@ -22,7 +22,7 @@ export default function ProductCard({ product, onViewDetails }) {
 
   const handleWhatsAppQuick = (e) => {
     e.stopPropagation();
-    const text = `Hello SLS JEWELLERS, I am inquiring about product *${product.code}* - ${prodName} from your digital catalogue. Please share weight and pricing details.`;
+    const text = `Hello SLS JEWELLERY WORKS, I am inquiring about product *${product.code}* - ${prodName} from your digital catalogue. Please share weight and pricing details.`;
     sendWhatsAppWithImage({
       text,
       imagePath: product.image,

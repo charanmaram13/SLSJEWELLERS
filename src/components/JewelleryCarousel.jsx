@@ -77,7 +77,7 @@ export default function JewelleryCarousel() {
   // Direct WhatsApp Enquiry URL with item context and photo preview
   const photoUrl = getPublicImageUrl(activeItem.image);
   const whatsappRunwayUrl = `https://wa.me/${BRAND_INFO.phoneRaw}?text=${encodeURIComponent(
-    `Hello SLS JEWELLERS, I am inquiring about the ${activeItem.title} (${activeItem.category}) from your Jewellery Runway.\n\n📸 Photo: ${photoUrl}`
+    `Hello SLS JEWELLERY WORKS, I am inquiring about the ${activeItem.title} (${activeItem.category}) from your Jewellery Runway.\n\n📸 Photo: ${photoUrl}`
   )}`;
 
   return (
@@ -303,7 +303,7 @@ export default function JewelleryCarousel() {
                     <span>WhatsApp Enquiry About This Piece</span>
                   </a>
                   <p className="text-center text-[10px] text-ivory/50 uppercase tracking-wider mt-2.5">
-                    Connect directly with SLS JEWELLERS master workshop
+                    Connect directly with SLS JEWELLERY WORKS master workshop
                   </p>
                 </div>
               </motion.div>

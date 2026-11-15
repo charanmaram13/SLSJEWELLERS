@@ -1,7 +1,7 @@
 export const TRANSLATIONS = {
   en: {
     // Brand
-    brandName: "SLS JEWELLERS",
+    brandName: "SLS JEWELLERY WORKS",
     location: "Sharraf Bazar, Tenali, Andhra Pradesh",
     locationShort: "TENALI · ANDHRA PRADESH",
     tagline: "Where Elegance Becomes Eternal",
@@ -9,7 +9,7 @@ export const TRANSLATIONS = {
     goldStandard: "22K Solid Gold Standard",
 
     // Welcome Screen
-    welcomeHeading: "Welcome to SLS JEWELLERS",
+    welcomeHeading: "Welcome to SLS JEWELLERY WORKS",
     welcomeSubheading: "CRAFTED WITH PRECISION IN TENALI",
     welcomeInstruction: "Choose Your Preferred Language",
     btnEnglish: "English",
@@ -79,7 +79,7 @@ export const TRANSLATIONS = {
     totalQuantity: "Total Quantity",
     clearCart: "Clear Cart",
     clearCartConfirm: "Are you sure you want to remove all items from your cart?",
-    priceNotice: "Since gold ornaments are custom-weighted, final price will be confirmed directly by SLS JEWELLERS on WhatsApp.",
+    priceNotice: "Since gold ornaments are custom-weighted, final price will be confirmed directly by SLS JEWELLERY WORKS on WhatsApp.",
     btnSendOrderWhatsApp: "Send Order on WhatsApp",
 
     // Checkout Modal
@@ -97,20 +97,20 @@ export const TRANSLATIONS = {
     errPhone: "Please enter a valid 10-digit mobile number.",
     errLocation: "Please enter your town or village.",
     btnSubmitOrder: "Open WhatsApp & Send Order",
-    secureNote: "Direct connection to SLS JEWELLERS (+91 99892 22524). No advance online payment required.",
+    secureNote: "Direct connection to SLS JEWELLERY WORKS (+91 99892 22524). No advance online payment required.",
 
     // About
-    aboutEyebrow: "ABOUT SLS JEWELLERS",
+    aboutEyebrow: "ABOUT SLS JEWELLERY WORKS",
     aboutHeading: "Tradition Meets Timeless Craft.",
-    aboutQuote: "“SLS JEWELLERS represents the beauty of craftsmanship, attention to detail and a passion for fine jewellery. Based in Tenali, Andhra Pradesh, we bring together traditional inspiration and refined jewellery-making.”",
-    aboutDescription: "Situated in the historic bullion hub of Sharraf Bazar in Tenali, SLS JEWELLERS serves families preparing for sacred weddings, individual connoisseurs seeking bespoke pieces, and retail partners who value authentic manufacturing standards.",
+    aboutQuote: "“SLS JEWELLERY WORKS represents the beauty of craftsmanship, attention to detail and a passion for fine jewellery. Based in Tenali, Andhra Pradesh, we bring together traditional inspiration and refined jewellery-making.”",
+    aboutDescription: "Situated in the historic bullion hub of Sharraf Bazar in Tenali, SLS JEWELLERY WORKS serves families preparing for sacred weddings, individual connoisseurs seeking bespoke pieces, and retail partners who value authentic manufacturing standards.",
 
     // Craftsmanship
     craftHeading: "The Beauty Behind Every Detail.",
     craftSub: "Witness the harmonious journey of precious gold from concept to finished radiance.",
 
     // Why Choose Us
-    whyUsHeading: "Why Choose SLS JEWELLERS?",
+    whyUsHeading: "Why Choose SLS JEWELLERY WORKS?",
     whyUsSub: "Our hallmark is uncompromising integrity, regional reverence, and dedicated manufacturer transparency in Tenali.",
 
     // Contact
@@ -129,7 +129,7 @@ export const TRANSLATIONS = {
 
   te: {
     // Brand
-    brandName: "SLS JEWELLERS",
+    brandName: "SLS జ్యువెలరీ వర్క్స్",
     location: "షరాఫ్ బజార్, తెనాలి, ఆంధ్రప్రదేశ్",
     locationShort: "తెనాలి · ఆంధ్రప్రదేశ్",
     tagline: "అందమైన ఆభరణాలు... మీ సంప్రదాయానికి ప్రత్యేక అందం",
@@ -137,7 +137,7 @@ export const TRANSLATIONS = {
     goldStandard: "22 క్యారెట్ల స్వచ్ఛమైన బంగారం",
 
     // Welcome Screen
-    welcomeHeading: "SLS JEWELLERS కు స్వాగతం",
+    welcomeHeading: "SLS జ్యువెలరీ వర్క్స్ కు స్వాగతం",
     welcomeSubheading: "తెనాలిలో నిష్ణాతులైన స్వర్ణకారుల కళాత్మక సృష్టి",
     welcomeInstruction: "మీకు నచ్చిన భాషను ఎంచుకోండి",
     btnEnglish: "English",
@@ -207,7 +207,7 @@ export const TRANSLATIONS = {
     totalQuantity: "మొత్తం సంఖ్య",
     clearCart: "కార్ట్ క్లియర్ చేయండి",
     clearCartConfirm: "మీ కార్ట్‌లోని అన్ని వస్తువులను తొలగించాలనుకుంటున్నారా?",
-    priceNotice: "ప్రతి బంగారు ఆభరణం ప్రత్యేక గ్రాముల తూకంతో తయారు చేయబడుతుంది. తుది ధరను SLS JEWELLERS వాట్సాప్‌లో నిర్ధారిస్తుంది.",
+    priceNotice: "ప్రతి బంగారు ఆభరణం ప్రత్యేక గ్రాముల తూకంతో తయారు చేయబడుతుంది. తుది ధరను SLS జ్యువెలరీ వర్క్స్ వాట్సాప్‌లో నిర్ధారిస్తుంది.",
     btnSendOrderWhatsApp: "వాట్సాప్లో ఆర్డర్ పంపండి",
 
     // Checkout Modal
@@ -225,20 +225,20 @@ export const TRANSLATIONS = {
     errPhone: "దయచేసి సరైన 10 అంకెల మొబైల్ నంబర్ నమోదు చేయండి.",
     errLocation: "దయచేసి మీ ఊరు లేదా గ్రామం పేరు నమోదు చేయండి.",
     btnSubmitOrder: "వాట్సాప్‌కు ఆర్డర్ పంపండి",
-    secureNote: "SLS JEWELLERS (+91 99892 22524) తో నేరుగా సంభాషణ. ఎలాంటి ఆన్‌లైన్ పేమెంట్ అవసరం లేదు.",
+    secureNote: "SLS జ్యువెలరీ వర్క్స్ (+91 99892 22524) తో నేరుగా సంభాషణ. ఎలాంటి ఆన్‌లైన్ పేమెంట్ అవసరం లేదు.",
 
     // About
-    aboutEyebrow: "SLS JEWELLERS గురించి",
+    aboutEyebrow: "SLS జ్యువెలరీ వర్క్స్ గురించి",
     aboutHeading: "సంప్రదాయం మరియు నైపుణ్యం కలబోత.",
-    aboutQuote: "“SLS JEWELLERS అనేది కళాత్మక నైపుణ్యం, నాణ్యత మరియు స్వచ్ఛమైన బంగారు ఆభరణాల తయారీకి ప్రతీక. ఆంధ్రప్రదేశ్‌లోని తెనాలి కేంద్రంగా, సాంప్రదాయ స్ఫూర్తితో విశిష్టమైన ఆభరణాలను తీర్చిదిద్దుతున్నాము.”",
-    aboutDescription: "తెనాలిలోని ప్రసిద్ధ షరాఫ్ బజార్‌లో ఉన్న SLS JEWELLERS వివాహ ఆభరణాలు, కుటుంబ వేడుకలు మరియు రిటైలర్లకు అవసరమైన అత్యుత్తమ బంగారు ఆభరణాలను నేరుగా అందిస్తుంది.",
+    aboutQuote: "“SLS జ్యువెలరీ వర్క్స్ అనేది కళాత్మక నైపుణ్యం, నాణ్యత మరియు స్వచ్ఛమైన బంగారు ఆభరణాల తయారీకి ప్రతీక. ఆంధ్రప్రదేశ్‌లోని తెనాలి కేంద్రంగా, సాంప్రదాయ స్ఫూర్తితో విశిష్టమైన ఆభరణాలను తీర్చిదిద్దుతున్నాము.”",
+    aboutDescription: "తెనాలిలోని ప్రసిద్ధ షరాఫ్ బజార్‌లో ఉన్న SLS జ్యువెలరీ వర్క్స్ వివాహ ఆభరణాలు, కుటుంబ వేడుకలు మరియు రిటైలర్లకు అవసరమైన అత్యుత్తమ బంగారు ఆభరణాలను నేరుగా అందిస్తుంది.",
 
     // Craftsmanship
     craftHeading: "ప్రతి సూక్ష్మ భాగంలోనూ నిండిన అందం.",
     craftSub: "స్వర్ణకారుల చేతుల్లో బంగారం అద్భుతమైన ఆభరణంగా మారే అద్భుత ప్రయాణం.",
 
     // Why Choose Us
-    whyUsHeading: "SLS JEWELLERS ను ఎందుకు ఎంచుకోవాలి?",
+    whyUsHeading: "SLS జ్యువెలరీ వర్క్స్ ను ఎందుకు ఎంచుకోవాలి?",
     whyUsSub: "నిజాయితీ, నమ్మకం మరియు తెనాలిలో నేరుగా తయారీదారుల వద్ద నుండి పొందే నాణ్యత మా ప్రత్యేకత.",
 
     // Contact

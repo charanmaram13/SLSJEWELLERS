@@ -86,13 +86,13 @@ export default function Navbar() {
               <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 border-gold-champagne flex items-center justify-center bg-white shadow-[0_0_12px_rgba(220,194,143,0.35)] group-hover:border-gold-warm transition-all group-hover:scale-105 overflow-hidden p-0.5 shrink-0">
                 <img
                   src="/assets/logo.jpg"
-                  alt="SLS JEWELLERS Official Logo"
+                  alt="SLS JEWELLERY WORKS Official Logo"
                   className="w-full h-full object-contain"
                 />
               </div>
               <div className="flex flex-col">
-                <span className="font-serif-luxury text-lg sm:text-2xl tracking-[0.2em] font-semibold text-gold-gradient uppercase group-hover:opacity-90 transition-opacity leading-none">
-                  SLS JEWELLERS
+                <span className="font-serif-luxury text-base sm:text-xl md:text-2xl tracking-[0.15em] font-semibold text-gold-gradient uppercase group-hover:opacity-90 transition-opacity leading-none">
+                  SLS JEWELLERY WORKS
                 </span>
                 <span className="font-sans text-[8px] sm:text-[9px] tracking-[0.3em] text-ivory/60 uppercase mt-1">
                   TENALI · MANUFACTURER
@@ -202,12 +202,12 @@ export default function Navbar() {
                 <div className="w-10 h-10 rounded-full border-2 border-gold-champagne flex items-center justify-center bg-white shadow-md overflow-hidden p-0.5 shrink-0">
                   <img
                     src="/assets/logo.jpg"
-                    alt="SLS JEWELLERS Logo"
+                    alt="SLS JEWELLERY WORKS Logo"
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <span className="font-serif-luxury text-lg tracking-widest text-gold-gradient uppercase font-semibold">
-                  SLS JEWELLERS
+                <span className="font-serif-luxury text-base tracking-widest text-gold-gradient uppercase font-semibold">
+                  SLS JEWELLERY WORKS
                 </span>
               </div>
               <button
