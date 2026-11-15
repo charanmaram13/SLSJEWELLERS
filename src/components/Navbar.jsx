@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, MessageCircle, Phone, Sparkles } from 'lucide-react';
+import { Menu, X, MessageCircle, Phone, ShoppingBag, Globe } from 'lucide-react';
 import { BRAND_INFO } from '../data/jewellery';
+import { useLanguage } from '../context/LanguageContext';
+import { useCart } from '../context/CartContext';
 
 export default function Navbar() {
+  const { language, setLanguage, t } = useLanguage();
+  const { totalQuantity, setIsCartOpen } = useCart();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -16,7 +20,7 @@ export default function Navbar() {
       }
 
       // Active section highlight tracking
-      const sections = ['home', 'about', 'collections', 'runway', 'craftsmanship', 'why-us', 'gallery', 'contact'];
+      const sections = ['home', 'catalogue', 'about', 'collections', 'runway', 'craftsmanship', 'why-us', 'gallery', 'contact'];
       for (const sectionId of sections) {
         const el = document.getElementById(sectionId);
         if (el) {
@@ -34,12 +38,13 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home', id: 'home' },
-    { name: 'About', href: '#about', id: 'about' },
-    { name: 'Collections', href: '#collections', id: 'collections' },
-    { name: 'Craftsmanship', href: '#craftsmanship', id: 'craftsmanship' },
-    { name: 'Gallery', href: '#gallery', id: 'gallery' },
-    { name: 'Contact', href: '#contact', id: 'contact' },
+    { name: t('navHome'), href: '#home', id: 'home' },
+    { name: t('navCatalogue'), href: '#catalogue', id: 'catalogue' },
+    { name: t('navAbout'), href: '#about', id: 'about' },
+    { name: t('navCollections'), href: '#collections', id: 'collections' },
+    { name: t('navCraftsmanship'), href: '#craftsmanship', id: 'craftsmanship' },
+    { name: t('navGallery'), href: '#gallery', id: 'gallery' },
+    { name: t('navContact'), href: '#contact', id: 'contact' },
   ];
 
   const handleNavClick = (e, href) => {
@@ -57,13 +62,17 @@ export default function Navbar() {
     }
   };
 
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'te' : 'en');
+  };
+
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
           isScrolled
             ? 'bg-[#2B1D15]/95 backdrop-blur-md py-3.5 border-b border-gold-champagne/15 shadow-[0_10px_30px_rgba(28,18,12,0.85)]'
-            : 'bg-transparent py-5 md:py-7'
+            : 'bg-transparent py-4 md:py-6'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,35 +81,35 @@ export default function Navbar() {
             <a
               href="#home"
               onClick={(e) => handleNavClick(e, '#home')}
-              className="flex items-center gap-3 group text-left cursor-pointer"
+              className="flex items-center gap-2.5 sm:gap-3 group text-left cursor-pointer"
             >
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-gold-champagne/60 flex items-center justify-center bg-chocolate-900 shadow-md group-hover:border-gold-champagne transition-colors">
-                <span className="font-serif-luxury font-bold text-base md:text-lg text-gold-champagne tracking-wider">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gold-champagne/60 flex items-center justify-center bg-chocolate-900 shadow-md group-hover:border-gold-champagne transition-colors">
+                <span className="font-serif-luxury font-bold text-base sm:text-lg text-gold-champagne tracking-wider">
                   S
                 </span>
               </div>
               <div className="flex flex-col">
-                <span className="font-serif-luxury text-xl md:text-2xl tracking-[0.2em] font-semibold text-gold-gradient uppercase group-hover:opacity-90 transition-opacity">
+                <span className="font-serif-luxury text-lg sm:text-2xl tracking-[0.2em] font-semibold text-gold-gradient uppercase group-hover:opacity-90 transition-opacity leading-none">
                   SLS JEWELLERS
                 </span>
-                <span className="font-sans text-[9px] md:text-[10px] tracking-[0.3em] text-ivory/60 uppercase">
-                  MANUFACTURER • TENALI
+                <span className="font-sans text-[8px] sm:text-[9px] tracking-[0.3em] text-ivory/60 uppercase mt-1">
+                  TENALI · MANUFACTURER
                 </span>
               </div>
             </a>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center space-x-8">
+            <nav className="hidden xl:flex items-center space-x-7">
               {navLinks.map((link) => {
                 const isActive = activeSection === link.id;
                 return (
                   <a
-                    key={link.name}
+                    key={link.id}
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className={`text-xs uppercase tracking-[0.2em] transition-all duration-300 relative py-1 ${
+                    className={`text-xs uppercase tracking-[0.18em] transition-all duration-300 relative py-1 ${
                       isActive
-                        ? 'text-gold-champagne font-medium'
+                        ? 'text-gold-champagne font-semibold'
                         : 'text-ivory/80 hover:text-gold-champagne'
                     }`}
                   >
@@ -113,34 +122,50 @@ export default function Navbar() {
               })}
             </nav>
 
-            {/* Desktop WhatsApp Action Button */}
-            <div className="hidden sm:flex items-center gap-3">
+            {/* Right Action Controls: Language Switcher, Cart Badge, WhatsApp Enquiry */}
+            <div className="flex items-center gap-2.5 sm:gap-3">
+              {/* Language Switcher Pill */}
+              <button
+                onClick={toggleLanguage}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gold-champagne/40 bg-chocolate-900 text-gold-champagne text-xs font-medium hover:bg-gold-champagne hover:text-chocolate transition-all shadow-sm"
+                title="Switch Language"
+                aria-label="Switch Language"
+              >
+                <Globe className="w-3.5 h-3.5" />
+                <span className="font-semibold uppercase tracking-wider">
+                  {language === 'en' ? 'తెలుగు' : 'English'}
+                </span>
+              </button>
+
+              {/* Shopping Cart Button with Item Badge */}
+              <button
+                onClick={() => setIsCartOpen(true)}
+                className="relative p-2.5 rounded-full border border-gold-champagne/40 bg-chocolate-900 text-gold-champagne hover:bg-gold-champagne hover:text-chocolate transition-all shadow-sm"
+                aria-label="View Shopping Cart"
+              >
+                <ShoppingBag className="w-4 h-4" />
+                {totalQuantity > 0 && (
+                  <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-red-600 text-white font-bold text-[10px] flex items-center justify-center shadow-md animate-pulse">
+                    {totalQuantity}
+                  </span>
+                )}
+              </button>
+
+              {/* Desktop WhatsApp Action Button */}
               <a
                 href={BRAND_INFO.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs uppercase tracking-[0.15em] font-medium text-chocolate bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-dark hover:shadow-[0_0_20px_rgba(220,194,143,0.4)] transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs uppercase tracking-[0.15em] font-semibold text-chocolate bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-dark hover:shadow-[0_0_15px_rgba(220,194,143,0.4)] transition-all"
               >
-                <MessageCircle className="w-4 h-4 text-chocolate transition-transform group-hover:rotate-12" />
-                <span>WhatsApp Enquiry</span>
-              </a>
-            </div>
-
-            {/* Mobile Hamburger Button */}
-            <div className="flex sm:hidden items-center gap-2">
-              <a
-                href={BRAND_INFO.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full border border-gold-champagne/30 text-gold-champagne hover:bg-gold-champagne/10"
-                aria-label="WhatsApp Enquiry"
-              >
-                <MessageCircle className="w-5 h-5" />
+                <MessageCircle className="w-4 h-4 text-chocolate" />
+                <span>WhatsApp</span>
               </a>
 
+              {/* Mobile Hamburger Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 text-gold-champagne hover:text-ivory focus:outline-none transition-colors"
+                className="p-1.5 text-gold-champagne hover:text-ivory focus:outline-none transition-colors xl:hidden"
                 aria-label="Toggle navigation menu"
               >
                 {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
@@ -152,19 +177,19 @@ export default function Navbar() {
 
       {/* Mobile Animated Slide-Over Drawer */}
       <div
-        className={`fixed inset-0 z-50 transition-opacity duration-300 lg:hidden ${
+        className={`fixed inset-0 z-50 transition-opacity duration-300 xl:hidden ${
           mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
         {/* Backdrop */}
         <div
           onClick={() => setMobileMenuOpen(false)}
-          className="absolute inset-0 bg-black/75 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/80 backdrop-blur-sm"
         />
 
         {/* Drawer Panel */}
         <div
-          className={`absolute top-0 right-0 w-[85%] max-w-sm h-full bg-chocolate-950 border-l border-gold-champagne/20 p-6 flex flex-col justify-between transition-transform duration-400 ease-out ${
+          className={`absolute top-0 right-0 w-[85%] max-w-sm h-full bg-chocolate-950 border-l border-gold-champagne/25 p-6 flex flex-col justify-between transition-transform duration-300 ease-out ${
             mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
@@ -189,16 +214,16 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Nav Links */}
-            <div className="py-6 flex flex-col space-y-4">
+            <div className="py-6 flex flex-col space-y-3.5">
               {navLinks.map((link) => (
                 <a
-                  key={link.name}
+                  key={link.id}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
                   className="font-serif-luxury text-xl tracking-wider text-ivory/90 hover:text-gold-champagne transition-colors py-1 flex items-center justify-between group"
                 >
                   <span>{link.name}</span>
-                  <span className="text-gold-champagne/40 group-hover:text-gold-champagne transition-colors text-xs tracking-widest">
+                  <span className="text-gold-champagne/40 group-hover:text-gold-champagne transition-colors text-xs">
                     →
                   </span>
                 </a>
@@ -208,6 +233,17 @@ export default function Navbar() {
 
           {/* Drawer Footer Actions */}
           <div className="pt-6 border-t border-gold-champagne/15 space-y-3">
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setIsCartOpen(true);
+              }}
+              className="w-full flex items-center justify-center gap-2 py-3 rounded-full text-xs uppercase tracking-widest font-semibold border border-gold-champagne text-gold-champagne hover:bg-gold-champagne hover:text-chocolate transition-colors"
+            >
+              <ShoppingBag className="w-4 h-4" />
+              <span>{t('cartLabel')} ({totalQuantity})</span>
+            </button>
+
             <a
               href={BRAND_INFO.whatsappUrl}
               target="_blank"
@@ -215,18 +251,18 @@ export default function Navbar() {
               className="w-full flex items-center justify-center gap-2 py-3 rounded-full text-xs uppercase tracking-widest font-semibold bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-dark text-chocolate shadow-lg"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>WhatsApp Enquiry</span>
+              <span>WhatsApp: +91 99892 22524</span>
             </a>
 
             <a
               href={`tel:${BRAND_INFO.phone}`}
-              className="w-full flex items-center justify-center gap-2 py-3 rounded-full text-xs uppercase tracking-widest font-medium border border-gold-champagne/40 text-gold-champagne hover:bg-gold-champagne/10 transition-colors"
+              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-full text-xs uppercase tracking-widest font-medium text-ivory/70 hover:text-gold-champagne transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span>Call: {BRAND_INFO.phoneDisplay}</span>
+              <span>{t('btnCallNow')}</span>
             </a>
 
-            <p className="text-center text-[10px] tracking-wider text-ivory/50 uppercase pt-2">
+            <p className="text-center text-[10px] tracking-wider text-ivory/50 uppercase pt-1">
               Sharraf Bazar, Tenali, Andhra Pradesh
             </p>
           </div>

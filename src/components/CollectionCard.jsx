@@ -1,8 +1,22 @@
 import React from 'react';
 import { ArrowUpRight, MessageCircle, Sparkles } from 'lucide-react';
 import { BRAND_INFO } from '../data/jewellery';
+import { useLanguage } from '../context/LanguageContext';
 
-export default function CollectionCard({ collection, onSelect }) {
+export default function CollectionCard({ collection }) {
+  const { language } = useLanguage();
+
+  const titleTeMap = {
+    'Gold Necklaces': 'బంగారు నెక్లెస్‌లు',
+    'Traditional Harams': 'సాంప్రదాయ హారాలు',
+    'Gold Chains': 'బంగారు గొలుసులు',
+    'Elegant Earrings': 'చెవి కమ్మలు & బుట్టలు',
+    'Bridal Jewellery': 'పెళ్లి ఆభరణాల సెట్లు',
+    'Exclusive Designs': 'ప్రత్యేక తయారీ డిజైన్లు'
+  };
+
+  const title = language === 'te' && titleTeMap[collection.title] ? titleTeMap[collection.title] : collection.title;
+
   const whatsappCollectionUrl = `https://wa.me/${BRAND_INFO.phoneRaw}?text=${encodeURIComponent(
     `Hello SLS JEWELLERS, I am interested in viewing your ${collection.title} collection from your website.`
   )}`;
@@ -49,7 +63,7 @@ export default function CollectionCard({ collection, onSelect }) {
             {collection.category}
           </span>
           <h3 className="font-serif-luxury text-2xl sm:text-3xl font-normal text-ivory group-hover:text-gold-champagne transition-colors">
-            {collection.title}
+            {title}
           </h3>
           <p className="font-sans text-xs sm:text-sm text-ivory/70 font-light leading-relaxed mt-2.5">
             {collection.description}
@@ -72,9 +86,9 @@ export default function CollectionCard({ collection, onSelect }) {
             href={whatsappCollectionUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] font-medium text-gold-champagne hover:text-ivory transition-colors group/btn"
+            className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] font-semibold text-gold-champagne hover:text-ivory transition-colors group/btn"
           >
-            <span>Explore Collection</span>
+            <span>{language === 'te' ? 'కలెక్షన్ చూడండి' : 'Explore Collection'}</span>
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 text-gold-warm" />
           </a>
 
@@ -82,9 +96,10 @@ export default function CollectionCard({ collection, onSelect }) {
             href={whatsappCollectionUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[11px] uppercase tracking-wider text-ivory/50 hover:text-gold-champagne transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-chocolate-800 border border-gold-champagne/30 text-gold-champagne hover:bg-gold-champagne hover:text-chocolate text-xs transition-colors"
           >
-            Enquire 22K Rates
+            <MessageCircle className="w-3.5 h-3.5" />
+            <span className="text-[11px]">WhatsApp</span>
           </a>
         </div>
       </div>

@@ -30,8 +30,9 @@ export default {
         }
       },
       fontFamily: {
-        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        sans: ['"Jost"', 'sans-serif'],
+        serif: ['"Cormorant Garamond"', '"Noto Serif Telugu"', 'Georgia', 'serif'],
+        sans: ['"Jost"', '"Noto Sans Telugu"', 'sans-serif'],
+        telugu: ['"Noto Sans Telugu"', 'sans-serif']
       },
       backgroundImage: {
         'gold-shimmer': 'linear-gradient(135deg, #DCC28F 0%, #C9A062 50%, #A67C3E 100%)',

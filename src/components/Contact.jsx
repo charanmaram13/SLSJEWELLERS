@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, MessageCircle, MapPin, Send, CheckCircle2, Clock, Sparkles, ExternalLink, AlertCircle } from 'lucide-react';
 import { BRAND_INFO } from '../data/jewellery';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Contact() {
+  const { language, t } = useLanguage();
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -17,14 +20,14 @@ export default function Contact() {
   const validate = () => {
     const errs = {};
     if (!formData.name.trim() || formData.name.trim().length < 2) {
-      errs.name = 'Please enter your full name.';
+      errs.name = language === 'te' ? 'దయచేసి మీ పూర్తి పేరు నమోదు చేయండి.' : 'Please enter your full name.';
     }
     const cleanPhone = formData.phone.replace(/[^0-9]/g, '');
     if (!cleanPhone || cleanPhone.length < 10) {
-      errs.phone = 'Please enter a valid 10-digit mobile number.';
+      errs.phone = language === 'te' ? 'దయచేసి సరైన 10 అంకెల మొబైల్ నంబర్ నమోదు చేయండి.' : 'Please enter a valid 10-digit mobile number.';
     }
     if (!formData.message.trim() || formData.message.trim().length < 5) {
-      errs.message = 'Please provide details of what jewellery you wish to craft.';
+      errs.message = language === 'te' ? 'దయచేసి మీరు కోరుకుంటున్న ఆభరణాల వివరాలు తెలియజేయండి.' : 'Please provide details of what jewellery you wish to craft.';
     }
     setErrors(errs);
     return Object.keys(errs).length === 0;
@@ -33,8 +36,6 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validate()) return;
-
-    // Submission flow with WhatsApp dispatch
     setSubmitted(true);
   };
 
@@ -72,15 +73,19 @@ export default function Contact() {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-gold-champagne/30 bg-chocolate-900/80 mb-3">
             <Sparkles className="w-3.5 h-3.5 text-gold-warm" />
             <span className="font-sans text-[11px] uppercase tracking-[0.25em] text-gold-champagne font-medium">
-              BESPOKE CONSULTATION
+              {language === 'te' ? 'ప్రత్యక్ష సంప్రదింపులు' : 'BESPOKE CONSULTATION'}
             </span>
           </div>
 
           <h2 className="font-serif-luxury text-3xl sm:text-5xl md:text-6xl font-light text-ivory tracking-tight">
-            Let's Create <span className="italic text-gold-gradient font-normal">Something Beautiful.</span>
+            {language === 'te' ? (
+              <>మమ్మల్ని <span className="italic text-gold-gradient font-normal">సంప్రదించండి</span></>
+            ) : (
+              <>Let's Create <span className="italic text-gold-gradient font-normal">Something Beautiful.</span></>
+            )}
           </h2>
           <p className="font-sans text-sm sm:text-base text-ivory/70 font-light max-w-xl mx-auto mt-4 leading-relaxed">
-            Visit our workshop in Sharraf Bazar, Tenali, or reach out directly to discuss customized weights, bridal harams, and orders.
+            {t('contactSub')}
           </p>
           <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-gold-champagne to-transparent mx-auto mt-6" />
         </div>
@@ -94,7 +99,7 @@ export default function Contact() {
             <div className="p-8 rounded-3xl bg-chocolate-900/80 border border-gold-champagne/30 shadow-xl space-y-6">
               <div>
                 <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-gold-champagne/80 font-semibold block mb-1">
-                  MANUFACTURING WORKSHOP & OFFICE
+                  {language === 'te' ? 'తయారీ కేంద్రం & కార్యాలయం' : 'MANUFACTURING WORKSHOP & OFFICE'}
                 </span>
                 <h3 className="font-serif-luxury text-3xl font-semibold text-gold-gradient uppercase tracking-wider">
                   SLS JEWELLERS
@@ -106,10 +111,10 @@ export default function Contact() {
                 <MapPin className="w-5 h-5 text-gold-champagne shrink-0 mt-1" />
                 <div>
                   <h4 className="font-sans text-xs uppercase tracking-widest text-gold-champagne font-medium mb-1">
-                    Address
+                    {t('addressLabel')}
                   </h4>
                   <p className="font-sans text-sm text-ivory/85 leading-relaxed font-light">
-                    Veera Raghavulu Street, Gajula Subbaraogari Veedhi, Sharraf Bazar, Tenali, Andhra Pradesh – 522201.
+                    {t('addressValue')}
                   </p>
                   <a
                     href={BRAND_INFO.googleMapsUrl}
@@ -117,7 +122,7 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-xs text-gold-champagne hover:text-ivory mt-2 font-medium tracking-wider"
                   >
-                    <span>View on Google Maps</span>
+                    <span>{language === 'te' ? 'గూగుల్ మ్యాప్స్‌లో చూడండి' : 'View on Google Maps'}</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 </div>
@@ -128,7 +133,7 @@ export default function Contact() {
                 <Phone className="w-5 h-5 text-gold-champagne shrink-0 mt-1" />
                 <div>
                   <h4 className="font-sans text-xs uppercase tracking-widest text-gold-champagne font-medium mb-1">
-                    Direct Phone / WhatsApp
+                    {t('phoneLabel')}
                   </h4>
                   <p className="font-serif-luxury text-xl text-ivory font-medium">
                     {BRAND_INFO.phoneDisplay}
@@ -141,10 +146,10 @@ export default function Contact() {
                 <Clock className="w-5 h-5 text-gold-champagne shrink-0 mt-1" />
                 <div>
                   <h4 className="font-sans text-xs uppercase tracking-widest text-gold-champagne font-medium mb-1">
-                    Operating Hours
+                    {t('hoursLabel')}
                   </h4>
                   <p className="font-sans text-xs text-ivory/70">
-                    Monday – Sunday: 10:00 AM – 9:00 PM IST
+                    {t('hoursValue')}
                   </p>
                 </div>
               </div>
@@ -158,195 +163,177 @@ export default function Contact() {
                   className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-full text-xs uppercase tracking-widest font-semibold bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-dark text-chocolate hover:shadow-[0_0_15px_rgba(220,194,143,0.35)] transition-all"
                 >
                   <MessageCircle className="w-4 h-4 text-chocolate" />
-                  <span>WhatsApp Enquiry</span>
+                  <span>WhatsApp</span>
                 </a>
-
                 <a
-                  href={`tel:${BRAND_INFO.phone}`}
-                  className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-full text-xs uppercase tracking-widest font-medium border border-gold-champagne/40 text-gold-champagne hover:bg-gold-champagne/10 transition-colors"
+                  href={`tel:${BRAND_INFO.phoneRaw}`}
+                  className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-full text-xs uppercase tracking-widest font-semibold border border-gold-champagne/50 text-gold-champagne hover:bg-chocolate-800 transition-colors"
                 >
-                  <Phone className="w-4 h-4" />
-                  <span>Click to Call</span>
+                  <Phone className="w-3.5 h-3.5" />
+                  <span>{t('btnCallNow')}</span>
                 </a>
               </div>
             </div>
+
+            {/* Tenali Hub Guarantee Card */}
+            <div className="p-6 rounded-2xl bg-chocolate-900/40 border border-gold-champagne/15 text-xs text-ivory/70 leading-relaxed font-light">
+              <span className="font-serif-luxury text-base text-gold-champagne font-medium block mb-1">
+                {language === 'te' ? 'తెనాలి షరాఫ్ బజార్ ప్రత్యక్ష సేవ' : 'Visiting Sharraf Bazar, Tenali?'}
+              </span>
+              {language === 'te'
+                ? 'మా వర్క్‌షాప్‌ను ప్రత్యక్షంగా సందర్శించి నమూనాలను పరిశీలించవచ్చు. మరింత సమాచారం కోసం రాకముందే వాట్సాప్‌లో సంప్రదించండి.'
+                : 'Our master goldsmiths welcome patrons and jewellers for dedicated consultation. Advance appointments ensure dedicated design previews.'}
+            </div>
           </div>
 
-          {/* Right Column: Validated Contact Enquiry Form */}
-          <div className="lg:col-span-7 text-left">
-            <div className="p-8 sm:p-10 rounded-3xl bg-chocolate-900/80 border border-gold-champagne/30 shadow-2xl relative">
+          {/* Right Column: Interactive Consultation & Enquiry Form */}
+          <div className="lg:col-span-7">
+            <div className="p-8 sm:p-12 rounded-3xl bg-chocolate-900/90 border border-gold-champagne/30 shadow-2xl relative text-left">
               
               {!submitted ? (
-                <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <h3 className="font-serif-luxury text-2xl sm:text-3xl font-normal text-ivory mb-2">
-                      Send a Direct Manufacturer Enquiry
+                    <h3 className="font-serif-luxury text-2xl sm:text-3xl font-light text-ivory mb-2">
+                      {language === 'te' ? 'ఆభరణాల విచారణ పత్రం' : 'Enquire Directly With Our Artisans'}
                     </h3>
-                    <p className="font-sans text-xs sm:text-sm text-ivory/70 font-light">
-                      Fill out the form below. Once confirmed, you can instantly submit the formatted inquiry directly to our WhatsApp.
+                    <p className="font-sans text-xs sm:text-sm text-ivory/60 font-light">
+                      {language === 'te' ? 'వివరాలను నింపండి, త్వరలోనే సంప్రదిస్తాము.' : 'Fill out your requirements below for custom gold weight estimation.'}
                     </p>
                   </div>
 
                   {/* Name Input */}
-                  <div>
-                    <label className="block font-sans text-xs uppercase tracking-widest text-gold-champagne font-medium mb-2">
-                      Your Full Name *
+                  <div className="space-y-1.5">
+                    <label className="block text-xs uppercase tracking-widest text-gold-champagne font-medium">
+                      {t('fieldName')}
                     </label>
                     <input
                       type="text"
                       value={formData.name}
-                      onChange={(e) => {
-                        setFormData({ ...formData, name: e.target.value });
-                        if (errors.name) setErrors({ ...errors, name: null });
-                      }}
-                      placeholder="e.g. Rajesh Kumar / Lakshmi Devi"
-                      className={`w-full px-5 py-3.5 rounded-xl bg-chocolate-950 border ${
-                        errors.name ? 'border-red-400' : 'border-gold-champagne/25'
-                      } text-ivory placeholder-ivory/30 focus:outline-none focus:border-gold-champagne transition-colors font-sans text-sm`}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      placeholder={t('fieldNamePlaceholder')}
+                      className={`w-full px-4 py-3.5 rounded-xl bg-chocolate-950 border ${
+                        errors.name ? 'border-red-400' : 'border-gold-champagne/30'
+                      } text-ivory placeholder-ivory/30 focus:outline-none focus:border-gold-champagne transition-colors text-sm`}
                     />
                     {errors.name && (
-                      <p className="text-red-400 text-xs mt-1.5 flex items-center gap-1">
-                        <AlertCircle className="w-3.5 h-3.5" />
-                        <span>{errors.name}</span>
-                      </p>
+                      <span className="text-red-400 text-xs flex items-center gap-1 mt-1">
+                        <AlertCircle className="w-3 h-3" />
+                        {errors.name}
+                      </span>
                     )}
                   </div>
 
-                  {/* Phone & Category Grid */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block font-sans text-xs uppercase tracking-widest text-gold-champagne font-medium mb-2">
-                        Phone / WhatsApp Number *
-                      </label>
-                      <input
-                        type="tel"
-                        value={formData.phone}
-                        onChange={(e) => {
-                          setFormData({ ...formData, phone: e.target.value });
-                          if (errors.phone) setErrors({ ...errors, phone: null });
-                        }}
-                        placeholder="e.g. 99892 22524"
-                        className={`w-full px-5 py-3.5 rounded-xl bg-chocolate-950 border ${
-                          errors.phone ? 'border-red-400' : 'border-gold-champagne/25'
-                        } text-ivory placeholder-ivory/30 focus:outline-none focus:border-gold-champagne transition-colors font-sans text-sm`}
-                      />
-                      {errors.phone && (
-                        <p className="text-red-400 text-xs mt-1.5 flex items-center gap-1">
-                          <AlertCircle className="w-3.5 h-3.5" />
-                          <span>{errors.phone}</span>
-                        </p>
-                      )}
-                    </div>
-
-                    <div>
-                      <label className="block font-sans text-xs uppercase tracking-widest text-gold-champagne font-medium mb-2">
-                        Jewellery Interest
-                      </label>
-                      <select
-                        value={formData.category}
-                        onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                        className="w-full px-5 py-3.5 rounded-xl bg-chocolate-950 border border-gold-champagne/25 text-ivory focus:outline-none focus:border-gold-champagne transition-colors font-sans text-sm"
-                      >
-                        <option value="Gold Necklaces">Gold Necklaces</option>
-                        <option value="Traditional Harams">Traditional Harams</option>
-                        <option value="Gold Chains">Gold Chains</option>
-                        <option value="Elegant Earrings">Elegant Earrings</option>
-                        <option value="Bridal Jewellery">Bridal Jewellery Set</option>
-                        <option value="Traditional Jewellery">Traditional Jewellery (Kasumala)</option>
-                        <option value="Custom Order / Weight">Custom Order / Weight Inquiry</option>
-                      </select>
-                    </div>
+                  {/* Phone Input */}
+                  <div className="space-y-1.5">
+                    <label className="block text-xs uppercase tracking-widest text-gold-champagne font-medium">
+                      {t('fieldPhone')}
+                    </label>
+                    <input
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      placeholder={t('fieldPhonePlaceholder')}
+                      className={`w-full px-4 py-3.5 rounded-xl bg-chocolate-950 border ${
+                        errors.phone ? 'border-red-400' : 'border-gold-champagne/30'
+                      } text-ivory placeholder-ivory/30 focus:outline-none focus:border-gold-champagne transition-colors text-sm`}
+                    />
+                    {errors.phone && (
+                      <span className="text-red-400 text-xs flex items-center gap-1 mt-1">
+                        <AlertCircle className="w-3 h-3" />
+                        {errors.phone}
+                      </span>
+                    )}
                   </div>
 
-                  {/* Message Input */}
-                  <div>
-                    <label className="block font-sans text-xs uppercase tracking-widest text-gold-champagne font-medium mb-2">
-                      Inquiry Details / Gram Weight Requirements *
+                  {/* Jewellery Category Dropdown */}
+                  <div className="space-y-1.5">
+                    <label className="block text-xs uppercase tracking-widest text-gold-champagne font-medium">
+                      {t('category')}
+                    </label>
+                    <select
+                      value={formData.category}
+                      onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                      className="w-full px-4 py-3.5 rounded-xl bg-chocolate-950 border border-gold-champagne/30 text-ivory focus:outline-none focus:border-gold-champagne transition-colors text-sm"
+                    >
+                      <option value="Gold Necklaces">{t('catNecklaces')}</option>
+                      <option value="Traditional Harams">{t('catHarams')}</option>
+                      <option value="Gold Chains">{t('catChains')}</option>
+                      <option value="Earrings & Jhumkas">{t('catEarrings')}</option>
+                      <option value="Bridal Jewellery">{t('catBridal')}</option>
+                      <option value="Traditional Jewellery">{t('catTraditional')}</option>
+                      <option value="Bespoke Design">{language === 'te' ? 'ప్రత్యేక ఆర్డర్' : 'Bespoke / Custom'}</option>
+                    </select>
+                  </div>
+
+                  {/* Message / Specifications */}
+                  <div className="space-y-1.5">
+                    <label className="block text-xs uppercase tracking-widest text-gold-champagne font-medium">
+                      {t('fieldMessage')}
                     </label>
                     <textarea
                       rows={4}
                       value={formData.message}
-                      onChange={(e) => {
-                        setFormData({ ...formData, message: e.target.value });
-                        if (errors.message) setErrors({ ...errors, message: null });
-                      }}
-                      placeholder="Please mention your preferred style, occasion, approximate gram weight, or any reference design..."
-                      className={`w-full px-5 py-3.5 rounded-xl bg-chocolate-950 border ${
-                        errors.message ? 'border-red-400' : 'border-gold-champagne/25'
-                      } text-ivory placeholder-ivory/30 focus:outline-none focus:border-gold-champagne transition-colors font-sans text-sm`}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      placeholder={t('fieldMessagePlaceholder')}
+                      className={`w-full px-4 py-3.5 rounded-xl bg-chocolate-950 border ${
+                        errors.message ? 'border-red-400' : 'border-gold-champagne/30'
+                      } text-ivory placeholder-ivory/30 focus:outline-none focus:border-gold-champagne transition-colors text-sm resize-none`}
                     />
                     {errors.message && (
-                      <p className="text-red-400 text-xs mt-1.5 flex items-center gap-1">
-                        <AlertCircle className="w-3.5 h-3.5" />
-                        <span>{errors.message}</span>
-                      </p>
+                      <span className="text-red-400 text-xs flex items-center gap-1 mt-1">
+                        <AlertCircle className="w-3 h-3" />
+                        {errors.message}
+                      </span>
                     )}
                   </div>
 
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-3 py-4 rounded-full text-xs uppercase tracking-[0.2em] font-semibold text-chocolate bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-dark hover:shadow-[0_0_25px_rgba(220,194,143,0.4)] transition-all duration-300 hover:scale-[1.01] active:scale-[0.99]"
+                    className="w-full py-4 rounded-xl text-xs uppercase tracking-[0.2em] font-semibold text-chocolate bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-dark hover:shadow-[0_0_20px_rgba(220,194,143,0.4)] transition-all flex items-center justify-center gap-2 group"
                   >
-                    <Send className="w-4 h-4 text-chocolate" />
-                    <span>Generate & Send Enquiry</span>
+                    <span>{language === 'te' ? 'విచారణను పంపండి' : 'Send Enquiry Request'}</span>
+                    <Send className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </button>
 
-                  <p className="text-center text-[11px] text-ivory/50">
-                    Direct communication with SLS JEWELLERS, Sharraf Bazar, Tenali. No spam guaranteed.
+                  <p className="text-[11px] text-ivory/50 text-center">
+                    {t('secureNote')}
                   </p>
                 </form>
               ) : (
-                /* Successful Validation & Immediate Delivery Step */
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="py-6 text-center space-y-6"
-                >
-                  <div className="w-16 h-16 rounded-full bg-gold-champagne/10 border-2 border-gold-champagne flex items-center justify-center mx-auto text-gold-champagne shadow-lg">
-                    <CheckCircle2 className="w-8 h-8" />
+                <div className="py-12 text-center space-y-6">
+                  <div className="w-16 h-16 rounded-full bg-gold-champagne/20 border border-gold-champagne flex items-center justify-center mx-auto text-gold-champagne">
+                    <CheckCircle2 className="w-8 h-8 text-gold-warm" />
                   </div>
 
-                  <div>
-                    <h3 className="font-serif-luxury text-3xl text-ivory font-normal">
-                      Enquiry Formatted Successfully!
+                  <div className="space-y-2">
+                    <h3 className="font-serif-luxury text-3xl font-light text-ivory">
+                      {language === 'te' ? 'ధన్యవాదాలు!' : 'Thank You!'}
                     </h3>
-                    <p className="font-sans text-sm text-ivory/80 font-light mt-2 max-w-md mx-auto">
-                      Thank you, <span className="text-gold-champagne font-medium">{formData.name}</span>. Your inquiry for <span className="text-gold-champagne font-medium">{formData.category}</span> is prepared.
+                    <p className="font-sans text-sm text-ivory/70 max-w-md mx-auto">
+                      {language === 'te'
+                        ? 'మీ విచారణ వివరాలు స్వీకరించబడ్డాయి. త్వరిత సంభాషణ కొరకు వాట్సాప్‌ను క్లిక్ చేయండి.'
+                        : 'Your enquiry has been prepared. For immediate response, dispatch directly to our master goldsmiths via WhatsApp.'}
                     </p>
                   </div>
 
-                  {/* Summary Box */}
-                  <div className="p-5 rounded-2xl bg-chocolate-950 border border-gold-champagne/20 text-left max-w-lg mx-auto space-y-2 text-xs">
-                    <p className="text-ivory/60">
-                      <strong className="text-gold-champagne">Contact Number:</strong> {formData.phone}
-                    </p>
-                    <p className="text-ivory/60">
-                      <strong className="text-gold-champagne">Category:</strong> {formData.category}
-                    </p>
-                    <p className="text-ivory/60">
-                      <strong className="text-gold-champagne">Message:</strong> {formData.message}
-                    </p>
-                  </div>
-
-                  {/* Direct WhatsApp Send Action */}
-                  <div className="space-y-3 max-w-md mx-auto">
+                  <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
                     <button
                       onClick={handleWhatsAppDirect}
-                      className="w-full flex items-center justify-center gap-3 py-4 rounded-full text-xs uppercase tracking-[0.2em] font-semibold text-chocolate bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-dark hover:shadow-[0_0_25px_rgba(220,194,143,0.5)] transition-all"
+                      className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full text-xs uppercase tracking-widest font-semibold text-chocolate bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-dark hover:shadow-lg transition-all"
                     >
                       <MessageCircle className="w-4 h-4 text-chocolate" />
-                      <span>Send Directly Via WhatsApp (+91 99892 22524)</span>
+                      <span>{language === 'te' ? 'వాట్సాప్ ద్వారా పంపండి' : 'Launch WhatsApp Now'}</span>
                     </button>
 
                     <button
                       onClick={handleReset}
-                      className="text-xs uppercase tracking-widest text-ivory/60 hover:text-gold-champagne transition-colors underline pt-2"
+                      className="px-6 py-3.5 rounded-full text-xs uppercase tracking-widest font-medium text-ivory/60 hover:text-ivory border border-gold-champagne/30 hover:border-gold-champagne/60 transition-colors"
                     >
-                      Submit Another Enquiry
+                      {language === 'te' ? 'మరొక సందేశం పంపండి' : 'Submit Another Request'}
                     </button>
                   </div>
-                </motion.div>
+                </div>
               )}
 
             </div>

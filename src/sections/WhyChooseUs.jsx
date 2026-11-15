@@ -2,8 +2,42 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
 import { WHY_CHOOSE_US } from '../data/jewellery';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function WhyChooseUs() {
+  const { language, t } = useLanguage();
+
+  const itemsData = language === 'te' ? [
+    {
+      id: "attention-to-detail",
+      title: "సూక్ష్మ నైపుణ్యం",
+      subtitle: "అత్యుత్తమ హస్తకళ",
+      description: "ఆభరణం రూపకల్పన నుండి పాలిషింగ్ వరకు ప్రతి అంశాన్ని అత్యంత శ్రద్ధతో, నిష్ణాతులైన స్వర్ణకారులతో తీర్చిదిద్దుతాము.",
+      icon: "gem"
+    },
+    {
+      id: "elegant-collections",
+      title: "విశిష్ట కలెక్షన్లు",
+      subtitle: "కనువిందు చేసే నమూనాలు",
+      description: "ఆంధ్రప్రదేశ్ సాంప్రదాయ టెంపుల్ హారాల నుండి సరికొత్త ఆధునిక నెక్లెస్‌ల వరకు ప్రతి సందర్భానికీ నప్పే విస్తృత ఎంపిక.",
+      icon: "sparkles"
+    },
+    {
+      id: "traditional-inspiration",
+      title: "సంప్రదాయ వారసత్వం",
+      subtitle: "తెనాలి పురాతన కళ",
+      description: "తెనాలి షరాఫ్ బజార్ కేంద్రంగా తరతరాల బంగారు పని నైపుణ్యాన్ని కొనసాగిస్తూ, స్వచ్ఛమైన నాణ్యతతో కూడిన ఆభరణాలను అందిస్తున్నాము.",
+      icon: "shield"
+    },
+    {
+      id: "customer-focused-service",
+      title: "విశ్వసనీయ సేవ",
+      subtitle: "నేరుగా తయారీదారుల వద్ద నుండి",
+      description: "మధ్యవర్తులు లేకుండా నేరుగా తయారీదారుల వద్ద నుండి పొందడం వలన కచ్చితమైన తూకం, పారదర్శకమైన ధరలు మరియు సంపూర్ణ నమ్మకం.",
+      icon: "heart-handshake"
+    }
+  ] : WHY_CHOOSE_US;
+
   // Custom luxury SVG icon renderer
   const renderCustomIcon = (type) => {
     switch (type) {
@@ -54,22 +88,26 @@ export default function WhyChooseUs() {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-gold-champagne/30 bg-chocolate-900/80 mb-3">
             <Sparkles className="w-3.5 h-3.5 text-gold-warm" />
             <span className="font-sans text-[11px] uppercase tracking-[0.25em] text-gold-champagne font-medium">
-              THE SLS DISTINCTION
+              {language === 'te' ? 'మా ప్రత్యేకతలు' : 'THE SLS DISTINCTION'}
             </span>
           </div>
 
           <h2 className="font-serif-luxury text-3xl sm:text-5xl md:text-6xl font-light text-ivory tracking-tight">
-            Why Choose <span className="italic text-gold-gradient font-normal">SLS JEWELLERS?</span>
+            {language === 'te' ? (
+              <>SLS JEWELLERS ను <span className="italic text-gold-gradient font-normal">ఎందుకు ఎంచుకోవాలి?</span></>
+            ) : (
+              <>Why Choose <span className="italic text-gold-gradient font-normal">SLS JEWELLERS?</span></>
+            )}
           </h2>
           <p className="font-sans text-sm sm:text-base text-ivory/70 font-light max-w-xl mx-auto mt-4 leading-relaxed">
-            Our hallmark is uncompromising integrity, regional reverence, and dedicated manufacturer transparency in Tenali.
+            {t('whyUsSub')}
           </p>
           <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-gold-champagne to-transparent mx-auto mt-6" />
         </div>
 
         {/* 4 Cards with 3D Hover & Custom SVG Icons */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {WHY_CHOOSE_US.map((item, index) => (
+          {itemsData.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 30 }}

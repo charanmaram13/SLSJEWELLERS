@@ -1,46 +1,59 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, ShieldCheck, ChevronRight, Gem } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Gem, MessageCircle } from 'lucide-react';
 import { BRAND_INFO } from '../data/jewellery';
-import { IMAGES } from '../data/images';
 import ParticlesBackground from './ParticlesBackground';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Hero() {
+  const { language, t } = useLanguage();
+
   const showcasePieces = [
     {
-      title: "Royal Peacock Haram",
-      category: "22K Traditional Haram",
-      image: IMAGES.runway[0].image,
-      tag: "Heritage Masterpiece",
-      detail: "Intricate Nakshi Filigree"
+      titleEn: "Grand Lakshmi Temple Haram",
+      titleTe: "మహాలక్ష్మి టెంపుల్ హారం",
+      code: "SLS004",
+      categoryEn: "22K Traditional Haram",
+      categoryTe: "22 క్యారెట్ల సాంప్రదాయ హారం",
+      image: "/assets/products/SLS004.jpg",
+      tagEn: "Masterpiece Haram",
+      tagTe: "ప్రసిద్ధ హారం"
     },
     {
-      title: "Devi Temple Choker",
-      category: "Bridal Jewellery",
-      image: IMAGES.runway[1].image,
-      tag: "Imperial Bridal",
-      detail: "Custom Collar Fitting"
+      titleEn: "Royal Kasu Haram with Lakshmi",
+      titleTe: "మహాలక్ష్మి కాసుల హారం",
+      code: "SLS005",
+      categoryEn: "Bridal Kasumala",
+      categoryTe: "పెళ్లి కాసుల హారం",
+      image: "/assets/products/SLS005.jpg",
+      tagEn: "Imperial Bridal",
+      tagTe: "పెళ్లి ఆభరణం"
     },
     {
-      title: "Vajra Interlock Chain",
-      category: "Pure Gold Chains",
-      image: IMAGES.runway[3].image,
-      tag: "Everyday Grandeur",
-      detail: "Hand-Interlocked Links"
+      titleEn: "Kasumala Ruby Floral Necklace",
+      titleTe: "సాంప్రదాయ కాసుల రూబీ నెక్లెస్",
+      code: "SLS002",
+      categoryEn: "Heritage Gold Necklace",
+      categoryTe: "హెరిటేజ్ బంగారు నెక్లెస్",
+      image: "/assets/products/SLS002.jpg",
+      tagEn: "Tenali Exclusive",
+      tagTe: "తెనాలి తయారీ"
     },
     {
-      title: "Aura Royale Jhumkas",
-      category: "Artisan Earrings",
-      image: IMAGES.runway[2].image,
-      tag: "Festive Splendor",
-      detail: "Micro-Beaded Drop"
+      titleEn: "Antique Temple Lakshmi Jhumkas",
+      titleTe: "లక్ష్మీ దేవి యాంటిక్ జుంకాలు",
+      code: "SLS006",
+      categoryEn: "Artisan Bell Jhumkas",
+      categoryTe: "స్వర్ణకారుల చేతిపని బుట్టలు",
+      image: "/assets/products/SLS006.jpg",
+      tagEn: "Festive Splendor",
+      tagTe: "పండుగ వేడుక"
     }
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
 
-  // Auto-rotate showcase pieces every 4.5s
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % showcasePieces.length);
@@ -48,11 +61,10 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, [showcasePieces.length]);
 
-  // Subtle 3D mouse perspective tilt
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 16;
-    const y = ((e.clientY - rect.top) / rect.height - 0.5) * -16;
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 14;
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * -14;
     setTilt({ x, y });
   };
 
@@ -72,6 +84,8 @@ export default function Hero() {
       });
     }
   };
+
+  const activePiece = showcasePieces[activeIndex];
 
   return (
     <section
@@ -96,63 +110,77 @@ export default function Hero() {
             className="lg:col-span-7 text-left space-y-6 md:space-y-8"
           >
             {/* Small Label */}
-            <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-gold-champagne/30 bg-chocolate-900/60 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-gold-champagne/30 bg-chocolate-900/80 backdrop-blur-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-gold-champagne animate-ping" />
               <span className="font-sans text-xs tracking-[0.25em] text-gold-champagne uppercase font-medium">
-                THE ART OF FINE JEWELLERY
+                {t('heroEyebrow')}
               </span>
             </div>
 
             {/* Main Heading */}
             <h1 className="font-serif-luxury text-4xl sm:text-6xl md:text-7xl lg:text-7xl font-light tracking-tight leading-[1.1] text-ivory">
-              Where Elegance <br />
-              <span className="text-gold-gradient font-normal italic">
-                Becomes Eternal.
-              </span>
+              {language === 'te' ? (
+                <>
+                  అందమైన ఆభరణాలు... <br />
+                  <span className="text-gold-gradient font-normal italic font-telugu">
+                    మీ సంప్రదాయానికి ప్రత్యేక అందం.
+                  </span>
+                </>
+              ) : (
+                <>
+                  Where Elegance <br />
+                  <span className="text-gold-gradient font-normal italic">
+                    Becomes Eternal.
+                  </span>
+                </>
+              )}
             </h1>
 
             {/* Description */}
-            <p className="font-sans text-base sm:text-lg md:text-xl text-ivory/80 font-light leading-relaxed max-w-xl">
-              Discover timeless jewellery crafted with passion, precision and an uncompromising eye for detail.
+            <p className="font-sans text-base sm:text-lg text-ivory/80 font-light leading-relaxed max-w-xl">
+              {t('heroDescription')}
             </p>
 
             {/* Location & Purity Badge */}
             <div className="flex flex-wrap items-center gap-4 text-xs tracking-wider text-ivory/70 pt-1">
               <div className="flex items-center gap-1.5 text-gold-champagne">
                 <Gem className="w-4 h-4 text-gold-warm" />
-                <span className="uppercase">Direct Manufacturer</span>
+                <span className="uppercase">{t('manufacturerBadge')}</span>
               </div>
               <span className="text-gold-champagne/40">•</span>
               <div className="flex items-center gap-1.5">
-                <span className="text-ivory/90 uppercase">Sharraf Bazar, Tenali</span>
+                <span className="text-ivory/90 uppercase">{t('location')}</span>
               </div>
               <span className="text-gold-champagne/40">•</span>
               <div className="flex items-center gap-1.5 text-gold-champagne">
                 <ShieldCheck className="w-4 h-4 text-gold-warm" />
-                <span className="uppercase">22K Gold Standard</span>
+                <span className="uppercase">{t('goldStandard')}</span>
               </div>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-3">
               <button
-                onClick={() => scrollTo('collections')}
+                onClick={() => scrollTo('catalogue')}
                 className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-xs uppercase tracking-[0.2em] font-semibold text-chocolate bg-gradient-to-r from-gold-champagne via-gold-warm to-gold-dark hover:shadow-[0_0_25px_rgba(220,194,143,0.5)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               >
-                <span>Explore Collections</span>
+                <span>{t('btnExploreCatalogue')}</span>
                 <ArrowRight className="w-4 h-4 text-chocolate transition-transform group-hover:translate-x-1" />
               </button>
 
-              <button
-                onClick={() => scrollTo('craftsmanship')}
+              <a
+                href={BRAND_INFO.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-xs uppercase tracking-[0.2em] font-medium text-ivory border border-gold-champagne/40 hover:bg-gold-champagne/10 hover:border-gold-champagne transition-all duration-300"
               >
-                <span>Discover Our Craft</span>
-              </button>
+                <MessageCircle className="w-4 h-4 text-gold-champagne" />
+                <span>{t('btnWhatsAppEnquiry')}</span>
+              </a>
             </div>
           </motion.div>
 
-          {/* Right Column: Immersive 3D Rotating Jewellery Showcase */}
+          {/* Right Column: Real Workshop Showpiece Showcase */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -180,49 +208,48 @@ export default function Hero() {
               <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-gold-champagne pointer-events-none" />
               <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-gold-champagne pointer-events-none" />
 
-              {/* Image Frame with Dramatic Lighting */}
+              {/* Image Frame */}
               <div className="relative w-full h-full rounded-2xl overflow-hidden bg-chocolate-950 group">
                 <img
-                  key={activeIndex}
-                  src={showcasePieces[activeIndex].image}
-                  alt={showcasePieces[activeIndex].title}
-                  className="w-full h-full object-cover object-center transition-all duration-1000 ease-out transform group-hover:scale-105"
+                  key={activePiece.code}
+                  src={activePiece.image}
+                  alt={language === 'te' ? activePiece.titleTe : activePiece.titleEn}
+                  className="w-full h-full object-cover object-center transition-all duration-700 ease-out transform group-hover:scale-105"
                   loading="eager"
                 />
 
-                {/* Ambient vignette and gold lighting overlay */}
+                {/* Overlays */}
                 <div className="absolute inset-0 bg-gradient-to-t from-chocolate-950 via-chocolate-950/20 to-transparent pointer-events-none" />
-                <div className="absolute inset-0 bg-gradient-to-tr from-gold-champagne/15 via-transparent to-transparent pointer-events-none" />
 
-                {/* Badge Tag */}
-                <div className="absolute top-4 left-4 z-10">
-                  <span className="px-3 py-1 rounded-full text-[10px] uppercase tracking-[0.2em] font-medium bg-chocolate-900/90 text-gold-champagne border border-gold-champagne/30 backdrop-blur-md">
-                    {showcasePieces[activeIndex].tag}
+                {/* Badge Tag & Code */}
+                <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
+                  <span className="px-3 py-1 rounded-full text-[10px] uppercase tracking-[0.2em] font-bold bg-chocolate-900/90 text-gold-champagne border border-gold-champagne/40 backdrop-blur-md">
+                    {activePiece.code}
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full text-[10px] uppercase tracking-wider font-medium bg-chocolate-950/80 text-ivory/80 border border-gold-champagne/20">
+                    {language === 'te' ? activePiece.tagTe : activePiece.tagEn}
                   </span>
                 </div>
 
                 {/* Floating Info Overlay on Bottom */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 z-10 text-left">
-                  <span className="text-[10px] tracking-[0.3em] uppercase text-gold-champagne/80 font-sans block mb-1">
-                    {showcasePieces[activeIndex].category}
+                  <span className="text-[10px] tracking-[0.25em] uppercase text-gold-champagne/80 font-sans block mb-1">
+                    {language === 'te' ? activePiece.categoryTe : activePiece.categoryEn}
                   </span>
-                  <h3 className="font-serif-luxury text-2xl font-normal text-ivory leading-tight mb-1">
-                    {showcasePieces[activeIndex].title}
+                  <h3 className="font-serif-luxury text-2xl font-normal text-ivory leading-tight mb-2">
+                    {language === 'te' ? activePiece.titleTe : activePiece.titleEn}
                   </h3>
-                  <p className="font-sans text-xs text-ivory/70">
-                    {showcasePieces[activeIndex].detail}
-                  </p>
 
                   {/* Carousel Selection Indicators */}
-                  <div className="flex items-center gap-2 pt-4">
+                  <div className="flex items-center gap-2 pt-2">
                     {showcasePieces.map((_, i) => (
                       <button
                         key={i}
                         onClick={() => setActiveIndex(i)}
-                        className={`h-1 rounded-full transition-all duration-300 ${
+                        className={`h-1.5 rounded-full transition-all duration-300 ${
                           i === activeIndex
                             ? 'w-7 bg-gold-champagne'
-                            : 'w-2 bg-ivory/20 hover:bg-ivory/40'
+                            : 'w-2 bg-ivory/30 hover:bg-ivory/50'
                         }`}
                         aria-label={`Showpiece ${i + 1}`}
                       />
