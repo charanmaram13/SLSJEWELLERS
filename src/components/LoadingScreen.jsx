@@ -28,32 +28,34 @@ export default function LoadingScreen({ onComplete }) {
 
           {/* Central Logo Container */}
           <div className="relative flex flex-col items-center text-center p-8 z-10">
-            {/* 3D Rotating & Pulsing Gold Geometric Monogram */}
+            {/* 3D Rotating & Pulsing Gold Geometric Monogram with Official Logo */}
             <motion.div
-              initial={{ scale: 0.85, opacity: 0, rotateY: -30 }}
-              animate={{ scale: 1, opacity: 1, rotateY: 0 }}
+              initial={{ scale: 0.85, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1.1, ease: "easeOut" }}
-              className="relative w-28 h-28 md:w-32 md:h-32 mb-8 flex items-center justify-center"
+              className="relative w-36 h-36 md:w-44 md:h-44 mb-8 flex items-center justify-center"
             >
-              {/* Outer rotating ring */}
+              {/* Outer rotating dashed ring */}
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full border border-gold-champagne/30 border-dashed"
+                className="absolute inset-0 rounded-full border-2 border-gold-champagne/40 border-dashed"
               />
 
               {/* Inner glowing diamond */}
               <motion.div
                 animate={{ rotate: -360 }}
                 transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-                className="absolute w-20 h-20 border border-gold-warm/40 rotate-45 shadow-[0_0_20px_rgba(201,160,98,0.25)]"
+                className="absolute w-28 h-28 border border-gold-warm/40 rotate-45 shadow-[0_0_25px_rgba(201,160,98,0.25)] pointer-events-none"
               />
 
-              {/* Inner solid badge */}
-              <div className="relative w-16 h-16 rounded-full bg-chocolate-900 border border-gold-champagne/80 flex items-center justify-center shadow-2xl">
-                <span className="font-serif-luxury font-bold text-2xl tracking-widest text-gold-gradient">
-                  SLS
-                </span>
+              {/* Central Official Logo Badge */}
+              <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-full bg-white border-2 border-gold-champagne flex items-center justify-center shadow-[0_0_30px_rgba(220,194,143,0.4)] overflow-hidden p-1.5 z-10">
+                <img
+                  src="/assets/logo.jpg"
+                  alt="SLS JEWELLERS Official Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
             </motion.div>
 

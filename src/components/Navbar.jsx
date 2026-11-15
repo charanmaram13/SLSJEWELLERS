@@ -83,10 +83,12 @@ export default function Navbar() {
               onClick={(e) => handleNavClick(e, '#home')}
               className="flex items-center gap-2.5 sm:gap-3 group text-left cursor-pointer"
             >
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gold-champagne/60 flex items-center justify-center bg-chocolate-900 shadow-md group-hover:border-gold-champagne transition-colors">
-                <span className="font-serif-luxury font-bold text-base sm:text-lg text-gold-champagne tracking-wider">
-                  S
-                </span>
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 border-gold-champagne flex items-center justify-center bg-white shadow-[0_0_12px_rgba(220,194,143,0.35)] group-hover:border-gold-warm transition-all group-hover:scale-105 overflow-hidden p-0.5 shrink-0">
+                <img
+                  src="/assets/logo.jpg"
+                  alt="SLS JEWELLERS Official Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-serif-luxury text-lg sm:text-2xl tracking-[0.2em] font-semibold text-gold-gradient uppercase group-hover:opacity-90 transition-opacity leading-none">
@@ -197,8 +199,12 @@ export default function Navbar() {
           <div>
             <div className="flex items-center justify-between pb-6 border-b border-gold-champagne/15">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full border border-gold-champagne/60 flex items-center justify-center bg-chocolate-900">
-                  <span className="font-serif-luxury text-sm font-bold text-gold-champagne">S</span>
+                <div className="w-10 h-10 rounded-full border-2 border-gold-champagne flex items-center justify-center bg-white shadow-md overflow-hidden p-0.5 shrink-0">
+                  <img
+                    src="/assets/logo.jpg"
+                    alt="SLS JEWELLERS Logo"
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <span className="font-serif-luxury text-lg tracking-widest text-gold-gradient uppercase font-semibold">
                   SLS JEWELLERS

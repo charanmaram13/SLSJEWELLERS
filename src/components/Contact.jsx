@@ -97,13 +97,18 @@ export default function Contact() {
           <div className="lg:col-span-5 text-left space-y-8">
             {/* Business Card */}
             <div className="p-8 rounded-3xl bg-chocolate-900/80 border border-gold-champagne/30 shadow-xl space-y-6">
-              <div>
-                <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-gold-champagne/80 font-semibold block mb-1">
-                  {language === 'te' ? 'తయారీ కేంద్రం & కార్యాలయం' : 'MANUFACTURING WORKSHOP & OFFICE'}
-                </span>
-                <h3 className="font-serif-luxury text-3xl font-semibold text-gold-gradient uppercase tracking-wider">
-                  SLS JEWELLERS
-                </h3>
+              <div className="flex items-center gap-3.5">
+                <div className="w-14 h-14 rounded-full border-2 border-gold-champagne bg-white overflow-hidden p-1 shadow-md shrink-0">
+                  <img src="/assets/logo.jpg" alt="SLS Logo" className="w-full h-full object-contain" />
+                </div>
+                <div>
+                  <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-gold-champagne/80 font-semibold block mb-0.5">
+                    {language === 'te' ? 'తయారీ కేంద్రం & కార్యాలయం' : 'MANUFACTURING WORKSHOP & OFFICE'}
+                  </span>
+                  <h3 className="font-serif-luxury text-2xl sm:text-3xl font-semibold text-gold-gradient uppercase tracking-wider">
+                    SLS JEWELLERS
+                  </h3>
+                </div>
               </div>
 
               {/* Exact Address */}

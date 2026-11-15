@@ -52,10 +52,12 @@ export default function Footer() {
           {/* Brand Column (Col 1-5) */}
           <div className="lg:col-span-5 space-y-6">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full border border-gold-champagne/60 flex items-center justify-center bg-chocolate-900 shadow-md">
-                <span className="font-serif-luxury font-bold text-2xl text-gold-champagne tracking-wider">
-                  S
-                </span>
+              <div className="w-14 h-14 rounded-full border-2 border-gold-champagne flex items-center justify-center bg-white shadow-lg overflow-hidden p-1 shrink-0">
+                <img
+                  src="/assets/logo.jpg"
+                  alt="SLS JEWELLERS Official Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
                 <span className="font-serif-luxury text-2xl tracking-[0.2em] font-semibold text-gold-gradient uppercase block">

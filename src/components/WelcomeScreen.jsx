@@ -41,13 +41,15 @@ export default function WelcomeScreen() {
           <div className="absolute bottom-3 left-3 w-5 h-5 border-b-2 border-l-2 border-gold-champagne pointer-events-none" />
           <div className="absolute bottom-3 right-3 w-5 h-5 border-b-2 border-r-2 border-gold-champagne pointer-events-none" />
 
-          {/* Central Logo Emblem */}
-          <div className="relative w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-6 flex items-center justify-center">
-            <div className="absolute inset-0 rounded-full border border-gold-champagne/40 animate-pulse-subtle" />
-            <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-chocolate-900 border-2 border-gold-champagne flex items-center justify-center shadow-xl">
-              <span className="font-serif-luxury text-2xl sm:text-3xl font-bold text-gold-gradient tracking-wider">
-                S
-              </span>
+          {/* Central Official Logo Emblem */}
+          <div className="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-6 flex items-center justify-center">
+            <div className="absolute inset-0 rounded-full border-2 border-gold-champagne/40 animate-pulse-subtle" />
+            <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white border-2 border-gold-champagne flex items-center justify-center shadow-[0_0_25px_rgba(220,194,143,0.35)] overflow-hidden p-1">
+              <img
+                src="/assets/logo.jpg"
+                alt="SLS JEWELLERS Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
 
